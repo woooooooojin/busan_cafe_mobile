@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import styled from 'styled-components' 
 
 const HeadBox = styled.div`
@@ -56,10 +56,14 @@ const HeadBox = styled.div`
 `
 
 export default function Header() {
+    const navigate = useNavigate();
+    const goToHome = ()=>{
+        navigate('/main');
+    }
   return (
     <div>
         <HeadBox>
-            <div className="logo_box">
+            <div className="logo_box" onClick={goToHome}>
                 <p>Busan Cafe</p>
             </div>
             <div className="search_box">
