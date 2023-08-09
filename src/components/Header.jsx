@@ -63,7 +63,7 @@ export default function Header() {
                 <p>Busan Cafe</p>
             </div>
             <div className="search_box">
-                <Link to='/search'><img src={ process.env.PUBLIC_URL + './img/search.png'} alt="img"/></Link>
+                <Link to='/search'><img src={ process.env.PUBLIC_URL + '../../img/search.png'} alt="img"/></Link>
             </div>
 
         </HeadBox>

@@ -5,9 +5,12 @@ import { useParams } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import { Navigation, Pagination, A11y, Autoplay } from 'swiper';
 import 'swiper/css';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
 
 const DetailWrap = styled.div`
     width: 100%;
+    padding-bottom: 50px;
 
     .swiper_wrap{
         width: 100%;
@@ -53,7 +56,29 @@ const DetailWrap = styled.div`
     .detail_desc{
         margin-top: 10px;
     } 
-   
+    .detail_loca{
+        margin-top: 10px;
+
+    }
+    .detail_loca2{
+        margin-top: 10px;
+    }
+   .detail_time{
+    margin-top: 10px;
+   }
+
+   span{
+    font-weight: bold;
+   }
+
+   .menu_wrap{
+    padding: 0 10px;
+   }
+   .menu_wrap p{
+    margin-top: 30px;
+    font-weight: bold;
+    text-align: center;
+   }
 
 `
 
@@ -65,6 +90,7 @@ export default function DetailHaeundae(props) {
 
   return (
     <div>
+        <Header/>
         <DetailWrap>
 
         <Swiper
@@ -83,18 +109,26 @@ export default function DetailHaeundae(props) {
             <h2>{haeundae[id].title}</h2>
             <p className='detail_desc'>{haeundae[id].desc}</p>
             <p className='detail_loca'><span>도로명주소</span><br/>{haeundae[id].location}</p>
-            <p className='detail_loca2'><span>지번주소</span>{haeundae[id].location2}</p>
-            <p className='detail_time'><span>영업시간</span>{haeundae[id].time}</p>
+            <p className='detail_loca2'><span>지번주소</span><br/>{haeundae[id].location2}</p>
+            <p className='detail_time'><span>영업시간</span><br/>{haeundae[id].time}</p>
         </div>
 
-        <div className="menu_box">
-            <img src={haeundae[id].menu} alt="img" />
-        </div>
+        <div className="menu_wrap">
+            <p>MENU</p>
+            <div className="menu_box">
+                <img src={haeundae[id].menu} alt="img" />
+            </div>
 
+        </div>
+        
 
 
 
         </DetailWrap>
+        <Footer/>
+
+
+        
 
 
     </div>
