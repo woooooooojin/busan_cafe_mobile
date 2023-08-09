@@ -88,7 +88,7 @@ return (
                 <h1>Busan Cafe</h1>
 
                 <div className="logo_wrap">
-                    <img src={ process.env.PUBLIC_URL + './img/cafe_icon.png'} alt="img"/>
+                    <img src={ process.env.PUBLIC_URL + '/img/cafe_icon.png'} alt="img"/>
                 </div>
 
                 <p>ⓒ 2023. Woojin all rights reserved.</p>
