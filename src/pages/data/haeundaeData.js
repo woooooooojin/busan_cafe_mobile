@@ -2,7 +2,7 @@ const haeundaeData= [
     {
       id: 'haeundae01',
       image: process.env.PUBLIC_URL+'/img/haeundae/haeundae_01_main.jpeg',
-      desc: '통창 유리 너머로 마치 바다에 떠있는 듯한 가슴이 뻥 뚫리는 뷰를 한눈에 볼 수 있고 필터커피와 맛있는 디저트가 있어 여유로은 기장카페를 찾는다면 딱 !',
+      desc: '통창 유리 너머로 마치 바다에 떠있는 듯한 가슴이 뻥 뚫리는 뷰를 한눈에 볼 수 있고 필터커피와 맛있는 디저트가 있어 여유로운 기장카페를 찾는다면 딱 !',
       title: '리투커피바',
       location: '부산 기장군 일광읍 문오성길 396',
       location2:'신평리 24-10', 
