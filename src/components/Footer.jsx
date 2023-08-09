@@ -63,13 +63,13 @@ export default function Footer() {
 
 
             <div className="home_box">
-                <img src={ process.env.PUBLIC_URL + '../../img/home.png'} alt="img" />
+                <img src={ process.env.PUBLIC_URL + './img/home.png'} alt="img" />
             </div>
             <div className="like_box">
-                <img src={ process.env.PUBLIC_URL + '../../img/heart2.png'} alt="img" />  
+                <img src={ process.env.PUBLIC_URL + './img/heart2.png'} alt="img" />  
             </div>
             <div className="back_box">
-                <img src={ process.env.PUBLIC_URL + '../../img/back.png'} alt="img" /> 
+                <img src={ process.env.PUBLIC_URL + './img/back.png'} alt="img" /> 
             </div>
             
 
