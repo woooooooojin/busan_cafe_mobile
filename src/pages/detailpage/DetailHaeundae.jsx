@@ -40,6 +40,19 @@ const DetailWrap = styled.div`
             height: 600px;
         }
     }
+
+    .detail_box{
+        padding: 0 10px;
+
+    }
+    .detail_box h2{
+        text-align: center;
+        margin-top: 10px;
+
+    }
+    .detail_desc{
+        margin-top: 10px;
+    } 
    
 
 `
