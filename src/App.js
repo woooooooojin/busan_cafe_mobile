@@ -17,6 +17,7 @@ import Search from './pages/Search'
 import haeundaeData from './pages/data/haeundaeData'
 import { useState } from 'react';
 import DetailHaeundae from './pages/detailpage/DetailHaeundae';
+import Cart from './pages/Cart';
 
 
 
@@ -51,6 +52,8 @@ function App() {
         <Route path = '/search' element={<Search/>}></Route>
 
         <Route path='/haeundae/detailhaeundae/:id' element={<DetailHaeundae haeundae = {haeundae}/>}/>
+
+        <Route path='/cart' element={<Cart/>}></Route>
       </Routes>
     </div>
 

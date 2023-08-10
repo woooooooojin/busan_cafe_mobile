@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components' 
 
 const FooterBox = styled.div`
@@ -76,7 +76,10 @@ const navigatePrev = ()=>{
                 <img src={ process.env.PUBLIC_URL + '/img/home.png'} alt="img" />
             </div>
             <div className="like_box">
-                <img src={ process.env.PUBLIC_URL + '/img/heart2.png'} alt="img" />  
+                <Link to='/cart'>
+                    <img src={ process.env.PUBLIC_URL + '/img/heart2.png'} alt="img" />  
+
+                </Link>
             </div>
             <div className="back_box" onClick={navigatePrev}>
                 <img src={ process.env.PUBLIC_URL + '/img/back.png'} alt="img" /> 
