@@ -4,6 +4,8 @@ import haeundaeData from './data/haeundaeData'
 import Header from '../components/Header'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
+import { useDispatch } from 'react-redux'
+import { addItem } from './store'
 
 const Wrap = styled.div`
   width: 100%;
@@ -121,6 +123,8 @@ const ItemWrap = styled.div`
 export default function Haeundae() {
 
   const [haeundae] = useState(haeundaeData)
+  const dispatch = useDispatch()
+
 
 
 
@@ -148,7 +152,7 @@ export default function Haeundae() {
                   <p className='item_time'><span>영업시간 : </span>{val.time}</p>
                  
                 </Link>
-                <button className='likebtn' type='button'>찜하기</button>
+                <button className='likebtn' onClick={()=>{dispatch(addItem({id: val.id, image: val.image, title: val.title ,count: 1}),alert('찜하기에 추가되었습니다.'))}}>찜하기</button>
 
               </div>
             )
