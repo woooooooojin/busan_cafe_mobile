@@ -72,7 +72,6 @@ const navigatePrev = ()=>{
     <div>
         <FooterBox>
 
-
             <div className="home_box" onClick={navigateToHome}>
                 <img src={ process.env.PUBLIC_URL + '/img/home.png'} alt="img" />
             </div>

@@ -146,8 +146,9 @@ export default function Haeundae() {
                   <p className='item_loca'><span>도로명주소 : </span><br/>{val.location}</p>
                   <p className='item_loca2'><span>지번 : </span>{val.location2}</p>
                   <p className='item_time'><span>영업시간 : </span>{val.time}</p>
-                  <button className='likebtn' type='button'>찜하기</button>
+                 
                 </Link>
+                <button className='likebtn' type='button'>찜하기</button>
 
               </div>
             )

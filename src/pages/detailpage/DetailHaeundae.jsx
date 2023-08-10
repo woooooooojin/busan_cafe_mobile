@@ -48,11 +48,37 @@ const DetailWrap = styled.div`
         padding: 0 10px;
 
     }
+
+
     .detail_box h2{
         text-align: center;
-        margin-top: 10px;
 
     }
+
+    .tit_box{
+        display: flex;
+        margin-top: 10px;
+    }
+    .box1{
+        width: 33.3333%;
+    }
+    .box2{
+        width: 33.3333%;
+    }
+    .box3{
+        width: 33.3333%;
+        text-align: right;
+    }
+    .like_box{
+        border: 1.5px solid #ccc;
+        width: 60px;
+        height: 25px;
+        background-color: #fff;
+        border-radius: 10px;
+        cursor: pointer;
+        color: steelblue;
+    }
+
     .detail_desc{
         margin-top: 10px;
     } 
@@ -78,6 +104,7 @@ const DetailWrap = styled.div`
     margin-top: 30px;
     font-weight: bold;
     text-align: center;
+    font-size: 18px;
    }
 
 `
@@ -106,7 +133,21 @@ export default function DetailHaeundae(props) {
         </Swiper>
 
         <div className="detail_box">
-            <h2>{haeundae[id].title}</h2>
+
+            <div className="tit_box">
+            <div className="box1"></div>
+
+            <div className="box2">
+                <h2>{haeundae[id].title}</h2>
+            </div>
+
+            <div className="box3">
+                <button className="like_box">
+                    찜하기
+                </button>
+            </div>
+
+            </div>
             <p className='detail_desc'>{haeundae[id].desc}</p>
             <p className='detail_loca'><span>도로명주소</span><br/>{haeundae[id].location}</p>
             <p className='detail_loca2'><span>지번주소</span><br/>{haeundae[id].location2}</p>
