@@ -41,7 +41,7 @@ const cart = createSlice({
 
 
 
-export const {addItem,deleteItem,addCount,minCount,deleteAll} = cart.actions 
+export const {addItem,deleteItem,deleteAll} = cart.actions 
 //dispatch와 짝
 
 

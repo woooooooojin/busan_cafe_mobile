@@ -7,6 +7,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../pages/store';
 
 const DetailWrap = styled.div`
     width: 100%;
@@ -114,6 +116,7 @@ const DetailWrap = styled.div`
 export default function DetailHaeundae(props) {
     const {haeundae} = props
     const {id} = useParams()
+    const dispatch = useDispatch()
 
   return (
     <div>
@@ -142,7 +145,7 @@ export default function DetailHaeundae(props) {
             </div>
 
             <div className="box3">
-                <button className="like_box">
+                <button className="like_box" onClick={()=>{dispatch(addItem({id: haeundae[id].id, image: haeundae[id].image, title: haeundae[id].title ,count: 1}),alert('찜하기에 추가되었습니다.'))}}>
                     찜하기
                 </button>
             </div>
