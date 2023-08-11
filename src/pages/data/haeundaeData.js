@@ -168,6 +168,20 @@ const haeundaeData= [
       subimage3: process.env.PUBLIC_URL+'/img/haeundae/haeundae_13_sub3.jpeg',
       time : '10:00 ~ 20:00',
     },
+    {
+      id: 'haeundae14',
+      image: process.env.PUBLIC_URL+'/img/haeundae/haeundae_14_main.jpeg',
+      desc: '만평 규모의 카페로 남녀노소 누구에게나 만족을 할 수 있는 카페! 정원과 건물외관이 아주 멋있는 반면 내부는 네온 느낌이라 반전매력이 있는 카페!',
+      title: '보몽드',
+      location: '부산 기장군 장안읍 구기길 19-7',
+      location2:'반룡리 56-7', 
+      menu: process.env.PUBLIC_URL+'/img/haeundae/haeundae_14_menu.jpeg',
+      subimage1: process.env.PUBLIC_URL+'/img/haeundae/haeundae_14_sub1.jpeg',
+      subimage2: process.env.PUBLIC_URL+'/img/haeundae/haeundae_14_sub2.jpeg',
+      subimage3: process.env.PUBLIC_URL+'/img/haeundae/haeundae_14_sub3.jpeg',
+      time : '10:00 ~ 24:00',
+    },
+
 
 
    
