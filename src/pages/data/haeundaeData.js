@@ -129,6 +129,47 @@ const haeundaeData= [
       subimage3: process.env.PUBLIC_URL+'/img/haeundae/haeundae_10_sub3.jpeg',
       time : '10:00 ~ 18:00',
     },
+    {
+      id: 'haeundae11',
+      image: process.env.PUBLIC_URL+'/img/haeundae/haeundae_11_main.jpeg',
+      desc: '해운대 해리단길에 위치하고 직접 로스팅한 신선한 원두로 커피를 제공하는 카페!',
+      title: '마비스커피',
+      location: '부산 해운대구 우동1로 20번길 5',
+      location2:'우동 535-25', 
+      menu: process.env.PUBLIC_URL+'/img/haeundae/haeundae_11_menu.jpeg',
+      subimage1: process.env.PUBLIC_URL+'/img/haeundae/haeundae_11_sub1.jpeg',
+      subimage2: process.env.PUBLIC_URL+'/img/haeundae/haeundae_11_sub2.jpeg',
+      subimage3: process.env.PUBLIC_URL+'/img/haeundae/haeundae_11_sub3.jpeg',
+      time : '10:00 ~ 19:00',
+    },
+    {
+      id: 'haeundae12',
+      image: process.env.PUBLIC_URL+'/img/haeundae/haeundae_12_main.jpeg',
+      desc: '마린시티를 대표하는 테라스 카페! 크로핀 전문점으로 디저트를 곁들이기도 좋은 카페!',
+      title: 'MIX',
+      location: '부산 해운대구 마린시티3로 51 106, 107호',
+      location2:'우동 1436-1', 
+      menu: process.env.PUBLIC_URL+'/img/haeundae/haeundae_12_menu.jpeg',
+      subimage1: process.env.PUBLIC_URL+'/img/haeundae/haeundae_12_sub1.jpeg',
+      subimage2: process.env.PUBLIC_URL+'/img/haeundae/haeundae_12_sub2.jpeg',
+      subimage3: process.env.PUBLIC_URL+'/img/haeundae/haeundae_12_sub3.jpeg',
+      time : '08:00 ~ 23:00',
+    },
+    {
+      id: 'haeundae13',
+      image: process.env.PUBLIC_URL+'/img/haeundae/haeundae_13_main.jpeg',
+      desc: '작은 언덕에 위치한 예쁜 하우스 카페! 채광이 주는 따뜻한 느낌의 유럽풍 키친과 카페!',
+      title: '만달리',
+      location: '부산 기장군 기장읍 반송로 1392 1층',
+      location2:'만화리 320-6', 
+      menu: process.env.PUBLIC_URL+'/img/haeundae/haeundae_13_menu.jpeg',
+      subimage1: process.env.PUBLIC_URL+'/img/haeundae/haeundae_13_sub1.jpeg',
+      subimage2: process.env.PUBLIC_URL+'/img/haeundae/haeundae_13_sub2.jpeg',
+      subimage3: process.env.PUBLIC_URL+'/img/haeundae/haeundae_13_sub3.jpeg',
+      time : '10:00 ~ 20:00',
+    },
+
+
    
     
   ]
