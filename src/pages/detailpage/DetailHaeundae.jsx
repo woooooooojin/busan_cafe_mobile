@@ -62,13 +62,13 @@ const DetailWrap = styled.div`
         margin-top: 10px;
     }
     .box1{
-        width: 33.3333%;
+        width: 15%;
     }
     .box2{
-        width: 33.3333%;
+        width: 70%;
     }
     .box3{
-        width: 33.3333%;
+        width: 15%;
         text-align: right;
     }
     .like_box{
