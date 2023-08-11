@@ -145,7 +145,7 @@ export default function DetailHaeundae(props) {
             </div>
 
             <div className="box3">
-                <button className="like_box" onClick={()=>{dispatch(addItem({id: haeundae[id].id, image: haeundae[id].image, title: haeundae[id].title ,count: 1}),alert('찜하기에 추가되었습니다.'))}}>
+                <button className="like_box" onClick={()=>{dispatch(addItem({loca: haeundae[id].location, id: haeundae[id].id, image: haeundae[id].image, title: haeundae[id].title ,count: 1}),alert('찜하기에 추가되었습니다.'))}}>
                     찜하기
                 </button>
             </div>

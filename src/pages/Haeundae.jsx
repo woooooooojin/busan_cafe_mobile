@@ -79,7 +79,8 @@ const ItemWrap = styled.div`
   }
   .item_loca{
     font-size: 12px;
-    min-height: 45px;
+    min-height: 30px;
+    margin-bottom: 5px;
     @media (min-width: 768px) {
       font-size: 14px;
     }
@@ -147,12 +148,12 @@ export default function Haeundae() {
                     <img src={val.image} alt="img"/>
                   </div>
                   <h4 className='item_tit'>{val.title}</h4>
-                  <p className='item_loca'><span>도로명주소 : </span><br/>{val.location}</p>
+                  <p className='item_loca'><span>도로명주소 : </span>{val.location}</p>
                   <p className='item_loca2'><span>지번 : </span>{val.location2}</p>
                   <p className='item_time'><span>영업시간 : </span>{val.time}</p>
                  
                 </Link>
-                <button className='likebtn' onClick={()=>{dispatch(addItem({id: val.id, image: val.image, title: val.title ,count: 1}),alert('찜하기에 추가되었습니다.'))}}>찜하기</button>
+                <button className='likebtn' onClick={()=>{dispatch(addItem({loca: val.location ,id: val.id, image: val.image, title: val.title ,count: 1}),alert('찜하기에 추가되었습니다.'))}}>찜하기</button>
 
               </div>
             )
