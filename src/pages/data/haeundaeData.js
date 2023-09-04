@@ -181,6 +181,32 @@ const haeundaeData= [
       subimage3: process.env.PUBLIC_URL+'/img/haeundae/haeundae_14_sub3.jpeg',
       time : '10:00 ~ 24:00',
     },
+    {
+      id: 'haeundae15',
+      image: process.env.PUBLIC_URL+'/img/haeundae/haeundae_15_main.jpeg',
+      desc: '아기자기하고 따듯한 분위기의 브런치 맛집',
+      title: '무늬(moony)',
+      location: '부산 해운대구 우동1로 38번길 11 우일맨션 1층 141호',
+      location2:'우동 518', 
+      menu: process.env.PUBLIC_URL+'/img/haeundae/haeundae_15_menu.jpeg',
+      subimage1: process.env.PUBLIC_URL+'/img/haeundae/haeundae_15_sub1.jpeg',
+      subimage2: process.env.PUBLIC_URL+'/img/haeundae/haeundae_15_sub2.jpeg',
+      subimage3: process.env.PUBLIC_URL+'/img/haeundae/haeundae_15_sub3.jpeg',
+      time : '08:00 ~ 18:00',
+    },
+    {
+      id: 'haeundae16',
+      image: process.env.PUBLIC_URL+'/img/haeundae/haeundae_16_main.jpeg',
+      desc: '고층에서 송정 앞바다를 한눈에 볼 수 있는 카페!',
+      title: '메르엣',
+      location: '부산 해운대구 송정광어골로 71 7층',
+      location2:'송정동 443-2', 
+      menu: process.env.PUBLIC_URL+'/img/haeundae/haeundae_16_menu.jpeg',
+      subimage1: process.env.PUBLIC_URL+'/img/haeundae/haeundae_16_sub1.jpeg',
+      subimage2: process.env.PUBLIC_URL+'/img/haeundae/haeundae_16_sub2.jpeg',
+      subimage3: process.env.PUBLIC_URL+'/img/haeundae/haeundae_16_sub3.jpeg',
+      time : '11:00 ~ 20:00',
+    },
 
 
 

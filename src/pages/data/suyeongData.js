@@ -1,0 +1,43 @@
+const suyeongData= [
+    {
+        id: 'suyeong01',
+        image: process.env.PUBLIC_URL+'/img/suyeong/suyeong_01_main.jpeg',
+        desc: '빈티지 느낌과 아지트 감성의 신상 커피 맛집 !',
+        title: '딥슬로우커피바',
+        location: '부산 수영구 구락로25번길 23-1 1층',
+        location2:'수영동 492-16', 
+        menu: process.env.PUBLIC_URL+'/img/suyeong/suyeong_01_menu.jpeg',
+        subimage1: process.env.PUBLIC_URL+'/img/suyeong/suyeong_01_sub1.jpeg',
+        subimage2: process.env.PUBLIC_URL+'/img/suyeong/suyeong_01_sub2.jpeg',
+        subimage3: process.env.PUBLIC_URL+'/img/suyeong/suyeong_01_sub3.jpeg',
+        time : '11:00 ~ 21:00',
+    },
+    {
+        id: 'suyeong02',
+        image: process.env.PUBLIC_URL+'/img/suyeong/suyeong_02_main.jpeg',
+        desc: '빈티지 느낌과 아지트 감성의 신상 커피 맛집 !',
+        title: '로즈랜드',
+        location: '부산 수영구 광안로61번가길 17',
+        location2:'민락동 717-15', 
+        menu: process.env.PUBLIC_URL+'/img/suyeong/suyeong_02_menu.jpeg',
+        subimage1: process.env.PUBLIC_URL+'/img/suyeong/suyeong_02_sub1.jpeg',
+        subimage2: process.env.PUBLIC_URL+'/img/suyeong/suyeong_02_sub2.jpeg',
+        subimage3: process.env.PUBLIC_URL+'/img/suyeong/suyeong_02_sub3.jpeg',
+        time : '10:00 ~ 20:00',
+    },
+    {
+        id: 'suyeong03',
+        image: process.env.PUBLIC_URL+'/img/suyeong/suyeong_03_main.jpeg',
+        desc: '빈티지 가구와 더불어 햇살이 잘 들어오는 햇살맛집!',
+        title: '부아장',
+        location: '부산 수영구 민락본동로27번길 30',
+        location2:'민락동 26-15', 
+        menu: process.env.PUBLIC_URL+'/img/suyeong/suyeong_03_menu.jpeg',
+        subimage1: process.env.PUBLIC_URL+'/img/suyeong/suyeong_03_sub1.jpeg',
+        subimage2: process.env.PUBLIC_URL+'/img/suyeong/suyeong_03_sub2.jpeg',
+        subimage3: process.env.PUBLIC_URL+'/img/suyeong/suyeong_03_sub3.jpeg',
+        time : '11:00 ~ 21:00',
+    },
+]
+
+export default suyeongData

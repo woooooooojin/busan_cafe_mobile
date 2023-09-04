@@ -18,6 +18,8 @@ import haeundaeData from './pages/data/haeundaeData'
 import { useState } from 'react';
 import DetailHaeundae from './pages/detailpage/DetailHaeundae';
 import Cart from './pages/Cart';
+import suyeongData from './pages/data/suyeongData';
+import DetailSuyeong from './pages/detailpage/DetailSuyeong';
 
 
 
@@ -27,6 +29,7 @@ import Cart from './pages/Cart';
 function App() {
 
   const [haeundae] = useState(haeundaeData)
+  const [suyeong] = useState(suyeongData)
 
   return (
     <div className="App">
@@ -52,6 +55,7 @@ function App() {
         <Route path = '/search' element={<Search/>}></Route>
 
         <Route path='/haeundae/detailhaeundae/:id' element={<DetailHaeundae haeundae = {haeundae}/>}/>
+        <Route path='/suyeong/detailsuyeong/:id' element={<DetailSuyeong suyeong = {suyeong}/>}/>
 
         <Route path='/cart' element={<Cart/>}></Route>
       </Routes>

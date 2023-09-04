@@ -160,7 +160,7 @@ export default function Main() {
           <div className="box3">
             <div className="box3_1"><Link to='/gangseo'>강서구</Link></div>
             <div className="box3_2"><Link to='/sasang'>사상 / 사하</Link></div>
-            <div className="box3_3"><Link to='/suyeong'>수영 / 남구</Link></div>
+            <div className="box3_3"><Link to='/suyeong'>수영 / 광안리 / 남구</Link></div>
           </div>
 
           <div className="box4">
