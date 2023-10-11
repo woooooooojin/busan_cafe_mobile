@@ -20,6 +20,8 @@ import DetailHaeundae from './pages/detailpage/DetailHaeundae';
 import Cart from './pages/Cart';
 import suyeongData from './pages/data/suyeongData';
 import DetailSuyeong from './pages/detailpage/DetailSuyeong';
+import Join from './pages/Join';
+import Login from './pages/Login';
 
 
 
@@ -37,9 +39,11 @@ function App() {
       
 
 
-
       <Routes>
         <Route path='/' element={<Logopage/>}></Route>
+
+        
+
         <Route path='/main' element={<Main/>}></Route>
         <Route path='/bukgu' element={<Bukgu/>}></Route> 
         <Route path='/dongrae' element={<Dongrae/>}></Route> 
@@ -53,7 +57,10 @@ function App() {
         <Route path = '/haeundae' element={<Haeundae/>}></Route>
 
         <Route path = '/search' element={<Search/>}></Route>
-
+        
+        <Route path='/login' element={<Login/>}></Route>
+        <Route path='/join' element={<Join/>}></Route>
+        
         <Route path='/haeundae/detailhaeundae/:id' element={<DetailHaeundae haeundae = {haeundae}/>}/>
         <Route path='/suyeong/detailsuyeong/:id' element={<DetailSuyeong suyeong = {suyeong}/>}/>
 

@@ -7,7 +7,7 @@ export default function Intro() {
 
   const timeout = ()=>{
     setTimeout(() => {
-			navigate('/main');
+			navigate('/join');
 		}, 2000);
   }
 

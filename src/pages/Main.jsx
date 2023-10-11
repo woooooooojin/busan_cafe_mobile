@@ -136,6 +136,7 @@ const FlexBox = styled.div`
 
 `
 
+
 export default function Main() {
   return (
     <div>
@@ -168,7 +169,8 @@ export default function Main() {
           </div>
         </div>
         </FlexBox> 
-    
+
+       
 
       <Footer/>
 
