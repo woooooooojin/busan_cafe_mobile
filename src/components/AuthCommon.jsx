@@ -26,8 +26,6 @@ export const Input = styled.input`
     font-size: 16px;
     &[type='submit']{
         cursor: pointer;
-        outline: none;
-        transition: all .3s;
         background-color: #749BC2;
         color: #fff;
         border: 1px solid #749BC2;
@@ -48,6 +46,8 @@ export const Switcher = styled.span`
   font-size: 14px;
   a{
     color: steelblue;
+    text-decoration: underline;
+    font-weight: 600;
   }
 
 `
