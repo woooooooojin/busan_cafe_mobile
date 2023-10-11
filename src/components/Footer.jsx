@@ -87,6 +87,7 @@ const navigatePrev = ()=>{
 
 const onClick = () => {
     auth.signOut()
+    navigate('/login')
 } //logout function
 
   return (

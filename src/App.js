@@ -22,6 +22,7 @@ import suyeongData from './pages/data/suyeongData';
 import DetailSuyeong from './pages/detailpage/DetailSuyeong';
 import Join from './pages/Join';
 import Login from './pages/Login';
+import ProtectedRoute from './components/ProtectedRoute';
 
 
 
@@ -42,9 +43,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Logopage/>}></Route>
 
-        
-
-        <Route path='/main' element={<Main/>}></Route>
+        <Route path='/main' element={<ProtectedRoute><Main/></ProtectedRoute>}></Route>
         <Route path='/bukgu' element={<Bukgu/>}></Route> 
         <Route path='/dongrae' element={<Dongrae/>}></Route> 
         <Route path='/yeonjae' element={<Yeonjae/>}></Route> 
@@ -57,7 +56,7 @@ function App() {
         <Route path = '/haeundae' element={<Haeundae/>}></Route>
 
         <Route path = '/search' element={<Search/>}></Route>
-        
+
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/join' element={<Join/>}></Route>
         
