@@ -28,9 +28,6 @@ export const Input = styled.input`
         cursor: pointer;
         background-color: #749BC2;
         color: #fff;
-        border: 1px solid #749BC2;
-        height: 45px;
-        border-radius: 50px;
     }
 `
 export const Title = styled.h1`
