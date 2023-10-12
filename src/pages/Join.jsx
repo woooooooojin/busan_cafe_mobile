@@ -5,6 +5,7 @@ import { auth } from '../firebase'
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
 import { FirebaseError } from 'firebase/app'
 import GithubLogin from '../components/GithubLogin'
+import GoogleLogin from '../components/GoogleLogin'
 
 export default function Join() {
 
@@ -63,6 +64,7 @@ export default function Join() {
                 이미 계정이 있으신가요? <Link to='/login'>로그인 하기</Link>
             </Switcher>
             <GithubLogin/>
+            <GoogleLogin/>
 
         </Wrapper>
     </>

@@ -28,6 +28,7 @@ export const Input = styled.input`
         cursor: pointer;
         background-color: #749BC2;
         color: #fff;
+        font-size: 14px;
     }
 `
 export const Title = styled.h1`
