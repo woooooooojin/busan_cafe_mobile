@@ -31,6 +31,7 @@ export const Input = styled.input`
         background-color: #749BC2;
         color: #fff;
         font-size: 14px;
+        height: 40px;
     }
 `
 export const Title = styled.h1`

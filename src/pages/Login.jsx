@@ -82,9 +82,10 @@ export default function Login() {
             </Switcher>
 
             <ForgotPasswd type='button' value="비밀번호 찾기" onClick={resetPasswd}/>
-                
+            
+           <GoogleLogin/>     
            <GithubLogin/>
-           <GoogleLogin/>
+           
 
        </Wrapper>
 
