@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/busan_cafe_mobile/static/css/main.f728a3a2.css",
-    "main.js": "/busan_cafe_mobile/static/js/main.73ad0c0a.js",
+    "main.js": "/busan_cafe_mobile/static/js/main.16c4c8bc.js",
     "static/js/787.77233270.chunk.js": "/busan_cafe_mobile/static/js/787.77233270.chunk.js",
     "index.html": "/busan_cafe_mobile/index.html",
     "main.f728a3a2.css.map": "/busan_cafe_mobile/static/css/main.f728a3a2.css.map",
-    "main.73ad0c0a.js.map": "/busan_cafe_mobile/static/js/main.73ad0c0a.js.map",
+    "main.16c4c8bc.js.map": "/busan_cafe_mobile/static/js/main.16c4c8bc.js.map",
     "787.77233270.chunk.js.map": "/busan_cafe_mobile/static/js/787.77233270.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f728a3a2.css",
-    "static/js/main.73ad0c0a.js"
+    "static/js/main.16c4c8bc.js"
   ]
 }
