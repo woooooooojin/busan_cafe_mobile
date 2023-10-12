@@ -12,7 +12,6 @@ import Seogu from './pages/Seogu';
 import Sasang from './pages/Sasang';
 import Suyeong from './pages/Suyeong';
 import Haeundae from './pages/Haeundae'
-import Search from './pages/Search'
 
 import haeundaeData from './pages/data/haeundaeData'
 import { useState } from 'react';
@@ -55,7 +54,6 @@ function App() {
         <Route path = '/suyeong' element={<Suyeong/>}></Route>
         <Route path = '/haeundae' element={<Haeundae/>}></Route>
 
-        <Route path = '/search' element={<Search/>}></Route>
 
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/join' element={<Join/>}></Route>
