@@ -1,4 +1,4 @@
-import { GithubAuthProvider, signInWithPopup } from 'firebase/auth'
+import { GithubAuthProvider, signInWithPopup, signInWithRedirect } from 'firebase/auth'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { styled } from 'styled-components'
@@ -26,10 +26,10 @@ const Logo = styled.img`
 export default function GithubLogin() {
 
     const navigate = useNavigate();
-    const onClick = async ()=>{
+    const onGitClick = async ()=>{
         try{
             const provider = new GithubAuthProvider()
-            await signInWithPopup(auth,provider)
+            await signInWithRedirect(auth,provider)
             navigate('/main')
         }catch(e){
             console.log(e)
@@ -38,7 +38,7 @@ export default function GithubLogin() {
 
   return (
     <>
-        <Button onClick={onClick}>
+        <Button onClick={onGitClick}>
             <Logo src={process.env.PUBLIC_URL + '/github-logo.svg'}/> 
             Continue With Github
         </Button>

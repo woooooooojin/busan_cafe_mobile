@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { styled } from 'styled-components'
 import { auth } from '../firebase'
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import { GoogleAuthProvider, signInWithPopup, signInWithRedirect } from 'firebase/auth'
 
 const Button = styled.div`
     padding: 6px;
@@ -30,7 +30,7 @@ export default function GoogleLogin() {
     const onClick = async ()=>{
         try{
             const provider = new GoogleAuthProvider()
-            await signInWithPopup(auth,provider)
+            await signInWithRedirect(auth,provider)
             navigate('/main')
         }catch(e){
             console.log(e)
