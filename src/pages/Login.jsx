@@ -5,6 +5,8 @@ import { auth } from '../firebase'
 import { createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithEmailAndPassword, updateProfile } from "firebase/auth"
 import { FirebaseError } from 'firebase/app'
 import { styled } from 'styled-components'
+import GithubLogin from '../components/GithubLogin'
+import GoogleLogin from '../components/GoogleLogin'
 
 
 
@@ -81,7 +83,8 @@ export default function Login() {
 
             <ForgotPasswd type='button' value="비밀번호 찾기" onClick={resetPasswd}/>
                 
-           
+           <GithubLogin/>
+           <GoogleLogin/>
 
        </Wrapper>
 
