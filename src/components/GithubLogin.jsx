@@ -3,6 +3,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { styled } from 'styled-components'
 import { auth } from '../firebase'
+import { FirebaseError } from 'firebase/app'
 
 const Button = styled.div`
     padding: 6px;
@@ -29,7 +30,7 @@ export default function GithubLogin() {
     const onGitClick = async ()=>{
         try{
             const provider = new GithubAuthProvider()
-            await signInWithCredential(auth,provider)
+            await signInWithPopup(auth, provider)
             navigate('/main')
         }catch(e){
             console.log(e)
