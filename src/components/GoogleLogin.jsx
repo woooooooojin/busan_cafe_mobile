@@ -30,7 +30,7 @@ export default function GoogleLogin() {
     const onClick = async ()=>{
         try{
             const provider = new GoogleAuthProvider()
-            await signInWithRedirect(auth, provider)
+            await signInWithPopup(auth, provider)
             navigate('/main')
         }catch(e){
             console.log(e)
