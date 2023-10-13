@@ -30,7 +30,7 @@ export default function GithubLogin() {
     const onGitClick = async ()=>{
         try{
             const provider = new GithubAuthProvider()
-            await signInWithPopup(auth, provider)
+            await signInWithRedirect(auth, provider)
             navigate('/main')
         }catch(e){
             console.log(e)
