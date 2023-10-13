@@ -1,4 +1,4 @@
-import { GithubAuthProvider, signInWithPopup, signInWithRedirect } from 'firebase/auth'
+import { GithubAuthProvider, signInWithCredential, signInWithPopup, signInWithRedirect } from 'firebase/auth'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { styled } from 'styled-components'
@@ -29,7 +29,7 @@ export default function GithubLogin() {
     const onGitClick = async ()=>{
         try{
             const provider = new GithubAuthProvider()
-            await signInWithPopup(auth,provider)
+            await signInWithCredential(auth,provider)
             navigate('/main')
         }catch(e){
             console.log(e)
