@@ -69,7 +69,7 @@ export default function Login() {
     <>
        <Wrapper>
 
-            <Title>로그인</Title>
+            <Title>LOGIN</Title>
             <Form onSubmit={onSubmit}>
                 <Input onChange={onChange} value={email} name='email' placeholder='email' type='email' required></Input>
                 <Input onChange={onChange} value={password} name='password' placeholder='password' type='password' required></Input>

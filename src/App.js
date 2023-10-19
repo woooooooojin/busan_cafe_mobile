@@ -22,6 +22,7 @@ import DetailSuyeong from './pages/detailpage/DetailSuyeong';
 import Join from './pages/Join';
 import Login from './pages/Login';
 import ProtectedRoute from './components/ProtectedRoute';
+import Profile from './pages/Profile';
 
 
 
@@ -62,6 +63,7 @@ function App() {
         <Route path='/suyeong/detailsuyeong/:id' element={<DetailSuyeong suyeong = {suyeong}/>}/>
 
         <Route path='/cart' element={<Cart/>}></Route>
+        <Route path ='/profile' element={<Profile/>}></Route>
       </Routes>
     </div>
 

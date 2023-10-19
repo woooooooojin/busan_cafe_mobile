@@ -51,7 +51,7 @@ export default function Join() {
     <>
         <Wrapper>
 
-            <Title>회원가입</Title>
+            <Title>JOIN</Title>
             <Form onSubmit={onSubmit}>
                 <Input onChange={onChange} value={name} name='name' placeholder='name' type='text' required></Input>
                 <Input onChange={onChange} value={email} name='email' placeholder='email' type='email' required></Input>
