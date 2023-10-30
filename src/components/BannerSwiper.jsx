@@ -19,6 +19,14 @@ const SlideWrap = styled.div`
     &.wrap3{
         background-color: #F8E1E3;
     }
+    @media (min-width: 768px) {
+          height: 120px;
+         
+    }
+    @media (min-width: 1440px) {
+          height: 150px;
+          
+    }
 `
 
 
