@@ -28,7 +28,37 @@ const SlideWrap = styled.div`
           
     }
 `
+const Desc = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
+    img{
+        width: 70px;
+        height: 70px;
+        border: 1px solid #ccc;
+        @media (min-width: 768px) {
+          width: 100px;
+          height: 100px;
+          line-height: 100px;
+         
+        }
+    }
+
+    p{
+        width: calc(100% - 70px - 3%);
+        height: 70px;
+        border: 1px solid #ccc;
+        @media (min-width: 768px) {
+          width: calc(100% - 100px - 5%);
+          height: 100px;
+          line-height: 100px;
+         
+        }
+    }
+`
 
 export default function BannerSwiper() {
   return (
@@ -40,19 +70,28 @@ export default function BannerSwiper() {
   >
     <SwiperSlide>
         <SlideWrap >
-            slide1
+            <Desc>
+                <img src="" alt="banner_img" />
+                <p>slide1</p>
+            </Desc>
         </SlideWrap>
     </SwiperSlide>
 
     <SwiperSlide>
         <SlideWrap className='wrap2'>
-            slide2
+            <Desc>
+                <img src="" alt="banner_img" />
+                <p>slide1</p>
+            </Desc>
         </SlideWrap>
     </SwiperSlide>
     
     <SwiperSlide>
         <SlideWrap className='wrap3'>
-            slide3
+            <Desc>
+                <img src="" alt="banner_img" />
+                <p>slide1</p>
+            </Desc>
         </SlideWrap>
     </SwiperSlide>
    
