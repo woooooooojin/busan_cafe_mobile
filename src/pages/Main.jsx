@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import styled from 'styled-components' 
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
+import BannerSwiper from '../components/BannerSwiper'
 
 const FlexBox = styled.div`
   width: 100%;
@@ -10,9 +11,9 @@ const FlexBox = styled.div`
   line-height: 70px;
   font-size: 14px;
   position: absolute;
-  top: 50%;
+  top: 80px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
 
  .main_wrap{
     @media (min-width: 768px) {
@@ -135,7 +136,13 @@ const FlexBox = styled.div`
   }
 
 `
+const Banner = styled.div`
+  width: 100%;
+  height: 80px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 
+`
 
 export default function Main() {
   return (
@@ -144,7 +151,11 @@ export default function Main() {
 
     
      
-        <FlexBox>
+     
+        <FlexBox> 
+          <Banner>
+            <BannerSwiper/>
+          </Banner>
         <div className="main_wrap">
           <div className="box1">
             <div className="box1_1"><Link to='/bukgu'>북구</Link></div>
