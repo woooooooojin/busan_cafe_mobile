@@ -139,8 +139,6 @@ const FlexBox = styled.div`
 const Banner = styled.div`
   width: 100%;
   height: 80px;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
 
 `
 
