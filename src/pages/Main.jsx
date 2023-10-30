@@ -138,8 +138,6 @@ const FlexBox = styled.div`
 `
 const Banner = styled.div`
   width: 100%;
-  height: 80px;
-
 `
 
 export default function Main() {
@@ -148,7 +146,7 @@ export default function Main() {
       <Header/>
 
     
-     
+         
      
         <FlexBox> 
           <Banner>
