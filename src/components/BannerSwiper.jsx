@@ -1,5 +1,6 @@
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide} from 'swiper/react';
+import { Autoplay, EffectFade} from 'swiper/modules';
 
 import 'swiper/css';
 import { styled } from 'styled-components';
@@ -63,8 +64,12 @@ const Desc = styled.div`
 export default function BannerSwiper() {
   return (
     <Swiper
+    modules={[Autoplay]}
     spaceBetween={0}
     slidesPerView={1}
+    autoplay={{delay : 3000}}
+    loop={true}
+   
     // onSlideChange={() => console.log('slide change')}
     // onSwiper={(swiper) => console.log(swiper)}
   >
