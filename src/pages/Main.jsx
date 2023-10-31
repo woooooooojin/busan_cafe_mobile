@@ -15,6 +15,7 @@ const FlexBox = styled.div`
   left: 50%;
   transform: translateX(-50%);
 
+
  .main_wrap{
     @media (min-width: 768px) {
         padding: 30px;
@@ -140,6 +141,17 @@ const Banner = styled.div`
   width: 100%;
 `
 
+const CommunityBtn = styled.button`
+  width: 120px;
+  height: 45px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  line-height: 45px;
+  border-radius: 10px;
+  margin-top: 20px;
+  
+`
+
 export default function Main() {
   return (
     <div>
@@ -175,9 +187,12 @@ export default function Main() {
             <div className="box4_1"><Link to='/haeundae'>해운대 / 기장</Link></div>
           </div>
         </div>
+
+        <CommunityBtn>
+          <Link>커뮤티니 바로가기</Link>
+        </CommunityBtn>
         </FlexBox> 
 
-       
 
       <Footer/>
 

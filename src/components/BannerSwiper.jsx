@@ -4,6 +4,7 @@ import { Autoplay, EffectFade} from 'swiper/modules';
 
 import 'swiper/css';
 import { styled } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const SlideWrap = styled.div`
     display: flex;
@@ -15,10 +16,10 @@ const SlideWrap = styled.div`
     background-color: #A6C1E8;
 
     &.wrap2{
-        background-color: #D3E7DC; 
+        background-color: #C2DEDC; 
     }
     &.wrap3{
-        background-color: #F8E1E3;
+        background-color: #CEE6F3;
     }
     @media (min-width: 768px) {
           height: 120px;
@@ -33,13 +34,17 @@ const Desc = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+    padding: 0 20px;
+    @media (min-width: 768px) {
+         padding: 0 50px;
+         
+    }
 
     img{
         width: 70px;
         height: 70px;
-        border: 1px solid #ccc;
         @media (min-width: 768px) {
           width: 100px;
           height: 100px;
@@ -51,11 +56,14 @@ const Desc = styled.div`
     p{
         width: calc(100% - 70px - 3%);
         height: 70px;
-        border: 1px solid #ccc;
+        font-size: 18px;
+        font-weight: 550;
+        color: #fff;
         @media (min-width: 768px) {
           width: calc(100% - 100px - 5%);
           height: 100px;
           line-height: 100px;
+          font-size: 22px;
          
         }
     }
@@ -67,35 +75,38 @@ export default function BannerSwiper() {
     modules={[Autoplay]}
     spaceBetween={0}
     slidesPerView={1}
-    autoplay={{delay : 3000}}
+    autoplay={{delay : 2500, disableOnInteraction : false}}
     loop={true}
    
-    // onSlideChange={() => console.log('slide change')}
-    // onSwiper={(swiper) => console.log(swiper)}
+    
   >
     <SwiperSlide>
-        <SlideWrap >
-            <Desc>
-                <img src="" alt="banner_img" />
-                <p>slide1</p>
-            </Desc>
-        </SlideWrap>
+        <Link to='/haeundae'>
+            <SlideWrap >
+                <Desc>
+                    <img src={ process.env.PUBLIC_URL + '/img/sea.png'} alt="banner_img" />
+                    <p>시원한 바다와 커피를 즐기고 싶다면?</p>
+                </Desc>
+            </SlideWrap>
+        </Link>
     </SwiperSlide>
 
     <SwiperSlide>
-        <SlideWrap className='wrap2'>
-            <Desc>
-                <img src="" alt="banner_img" />
-                <p>slide1</p>
-            </Desc>
-        </SlideWrap>
+        <Link to='/suyeong'>
+            <SlideWrap className='wrap2'>
+                <Desc>
+                    <img src={ process.env.PUBLIC_URL + '/img/bridge_icon.png'} alt="banner_img" />
+                    <p>아름다운 광안대교 뷰와 커피 한잔!</p>
+                </Desc>
+            </SlideWrap>
+        </Link>
     </SwiperSlide>
     
     <SwiperSlide>
         <SlideWrap className='wrap3'>
             <Desc>
-                <img src="" alt="banner_img" />
-                <p>slide1</p>
+                <img src={ process.env.PUBLIC_URL + '/img/chat_icon.png'} alt="banner_img" />
+                <p>커뮤니티 서비스 준비중...</p>
             </Desc>
         </SlideWrap>
     </SwiperSlide>
