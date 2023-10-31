@@ -23,6 +23,7 @@ import Join from './pages/Join';
 import Login from './pages/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import Profile from './pages/Profile';
+import Community from './components/Community';
 
 
 
@@ -58,6 +59,7 @@ function App() {
 
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/join' element={<Join/>}></Route>
+        <Route path='/community' element={<Community/>}></Route>
         
         <Route path='/haeundae/detailhaeundae/:id' element={<DetailHaeundae haeundae = {haeundae}/>}/>
         <Route path='/suyeong/detailsuyeong/:id' element={<DetailSuyeong suyeong = {suyeong}/>}/>

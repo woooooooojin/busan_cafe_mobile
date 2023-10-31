@@ -142,14 +142,18 @@ const Banner = styled.div`
 `
 
 const CommunityBtn = styled.button`
-  width: 120px;
+  width: 150px;
   height: 45px;
   background-color: #fff;
-  border: 1px solid #ccc;
+  border: 2px dashed #749BC2;
   line-height: 45px;
   border-radius: 10px;
   margin-top: 20px;
-  
+  a{
+    color: #749BC2;
+    font-weight: 550;
+  } 
+
 `
 
 export default function Main() {
@@ -189,7 +193,7 @@ export default function Main() {
         </div>
 
         <CommunityBtn>
-          <Link>커뮤티니 바로가기</Link>
+          <Link to='/community'>커뮤티니 바로가기</Link>
         </CommunityBtn>
         </FlexBox> 
 
