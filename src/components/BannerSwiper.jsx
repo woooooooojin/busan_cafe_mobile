@@ -85,7 +85,7 @@ export default function BannerSwiper() {
             <SlideWrap >
                 <Desc>
                     <img src={ process.env.PUBLIC_URL + '/img/sea.png'} alt="banner_img" />
-                    <p>시원한 바다와 커피를 즐기고 싶다면?</p>
+                    <p>바다뷰와 커피를 즐기고 싶다면?</p>
                 </Desc>
             </SlideWrap>
         </Link>
@@ -96,7 +96,7 @@ export default function BannerSwiper() {
             <SlideWrap className='wrap2'>
                 <Desc>
                     <img src={ process.env.PUBLIC_URL + '/img/bridge_icon.png'} alt="banner_img" />
-                    <p>아름다운 광안대교 뷰와 커피 한잔!</p>
+                    <p>광안리에서 커피 한잔 어때?</p>
                 </Desc>
             </SlideWrap>
         </Link>
