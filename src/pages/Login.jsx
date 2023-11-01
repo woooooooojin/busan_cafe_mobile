@@ -28,6 +28,7 @@ export default function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
+    const [loading, setLoading] = useState(false)
 
     const onChange = (e)=>{
         const {target : {name, value}} = e;
@@ -42,14 +43,17 @@ export default function Login() {
         e.preventDefault();
         setError('')
 
-        if(email ==="" || password === "")return;
+        if(loading || email ==="" || password === "")return;
         try{
+            setLoading(true)
             await signInWithEmailAndPassword(auth,email,password)
             navigate('/main')
         }catch(e){
             if(e instanceof FirebaseError){
                 setError(e.message) //firebase 에러가 있다면 에러 메세지를 setError에 저장
             }
+        }finally{
+            setLoading(false)
         }
 
 
@@ -73,7 +77,7 @@ export default function Login() {
             <Form onSubmit={onSubmit}>
                 <Input onChange={onChange} value={email} name='email' placeholder='email' type='email' required></Input>
                 <Input onChange={onChange} value={password} name='password' placeholder='password' type='password' required></Input>
-                <Input  value="로그인" type='submit'></Input>
+                <Input  value={loading ? "로딩중..":"로그인"} type='submit'></Input>
 
             </Form>
             {error !== '' ? <Error>{error}</Error> : null }
