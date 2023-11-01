@@ -149,6 +149,7 @@ const CommunityBtn = styled.button`
   line-height: 45px;
   border-radius: 10px;
   margin-top: 20px;
+  margin-bottom: 10px;
   a{
     color: #749BC2;
     font-weight: 550;
