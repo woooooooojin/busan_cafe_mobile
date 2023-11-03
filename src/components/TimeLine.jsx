@@ -14,7 +14,6 @@ const Wrapper = styled.div`
 
 export default function TimeLine() {
     const [post, setPost] = useState([])
-
     useEffect(()=>{
         let unsubscribe = null
 
@@ -42,11 +41,21 @@ export default function TimeLine() {
         }   
     },[])
 
+   
+
   return (
     <>
         <Wrapper>
-            {
-            }
+            
+                 {
+                    post.map((item) => (
+                    <div key={item.id}>
+                      <p>Username: {item.username}</p>
+                      <p>Post: {item.post}</p>
+                    </div>
+                  ))
+                }
+            
         </Wrapper>
     </>
   )
