@@ -92,7 +92,7 @@ export default function TimeLine() {
     const onDelete = async(item)=>{
         const ok = window.confirm('삭제하시겠습니까?')
        
-        if(!ok)return
+        if(!ok || user.uid !== item.userId)return
     
        try{
         //doc함수를 사용하여 db에서 포스트를 찾고 deleteDoc함수를 입력해주어야 한다
@@ -121,9 +121,8 @@ export default function TimeLine() {
                  {
                     post.map((item) => (
                     <div className='wrap' key={item.id}>
-                        
-                        <DeleteBtn className='del_btn' onClick={() => onDelete(item)}>X</DeleteBtn>
-
+                   
+                    {user.uid === item.userId ? <DeleteBtn className='del_btn' onClick={() => onDelete(item)}>X</DeleteBtn> : null}     
                         <div className="text_wrap">
                             <span className='username'>{item.username}</span>
                             <p className='post_desc'>{item.post}</p>
