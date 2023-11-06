@@ -44,7 +44,6 @@ const Wrapper = styled.div`
         position: absolute;
         right: 5px;
         top: 5px;
-        z-index: 99;
         cursor: pointer;
     }
 `
@@ -56,6 +55,25 @@ const DeleteBtn = styled.button`
     font-size: 12px;
     border: 1px solid tomato;
     color: tomato;
+`
+const EditImage = styled.button`
+    font-size: 12px;
+    background-color: transparent;
+    padding: 2px 5px;
+    border: 1px solid steelblue;
+    border-radius: 5px;
+    color: steelblue;
+    cursor: pointer;
+`
+const EditPost = styled.button`
+    font-size: 12px;
+    background-color: transparent;
+    padding: 2px 5px;
+    border: 1px solid steelblue;
+    border-radius: 5px;
+    color: steelblue;
+    margin-top: 5px;
+    cursor: pointer;
 `
 
 export default function TimeLine() {
@@ -109,7 +127,9 @@ export default function TimeLine() {
         console.log(e)
        }
        
-    }
+    } //onDelete 포스트삭제함수
+
+
 
    
 
@@ -126,10 +146,14 @@ export default function TimeLine() {
                         <div className="text_wrap">
                             <span className='username'>{item.username}</span>
                             <p className='post_desc'>{item.post}</p>
+                            {user.uid === item.userId ? <EditPost>내용수정</EditPost> : null}
+                            
+
                         </div>
 
                         <div className="img_wrap">
                             {item.photo ? <img src={item.photo} alt="img" /> : null}
+                            {item.photo && user.uid === item.userId ? <EditImage>사진수정</EditImage>  : null }
                         </div>
                     </div>
                   ))
