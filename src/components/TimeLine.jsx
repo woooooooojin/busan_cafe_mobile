@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { collection, deleteDoc, doc, limit, onSnapshot, orderBy, query } from 'firebase/firestore';
+import { collection, deleteDoc, doc, limit, onSnapshot, orderBy, query, updateDoc } from 'firebase/firestore';
 import { auth, db, storage } from '../firebase';
 import { deleteObject, ref } from 'firebase/storage';
 
@@ -23,12 +23,23 @@ const Wrapper = styled.div`
     }
     .text_wrap{
         width: 70%;
+        overflow: hidden; //나중에 수정
         .username{
             font-weight: 500;
             font-size: 18px;
         }
         .post_desc{
             margin-top: 5px;
+        }
+        .save_btn{
+            font-size: 12px;
+            background-color: transparent;
+            padding: 2px 5px;
+            border: 1px solid steelblue;
+            border-radius: 5px;
+            color: steelblue;
+            margin-top: 5px;
+            cursor: pointer;
         }
     }
     .img_wrap{
@@ -45,6 +56,15 @@ const Wrapper = styled.div`
         right: 5px;
         top: 5px;
         cursor: pointer;
+    }
+    .text_area{
+        width: 100%;
+        resize: none;
+        height: 60px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 5px;
     }
 `
 const DeleteBtn = styled.button`
@@ -79,6 +99,8 @@ const EditPost = styled.button`
 export default function TimeLine() {
     const [post, setPost] = useState([])
     const user = auth.currentUser
+    const [editingPost, setEditingPost] = useState(null); 
+    const [editedContent, setEditedContent] = useState('');//text 수정
 
     useEffect(()=>{
         let unsubscribe = null
@@ -129,13 +151,25 @@ export default function TimeLine() {
        
     } //onDelete 포스트삭제함수
 
+    const saveEditedPost = async (item) => {
+        try {
+          await updateDoc(doc(db, 'posts', item.id), {
+            post: editedContent,
+          });
+      
+          setEditingPost(null);
+        } catch (e) {
+          console.log(e);
+        }
+      };
+
 
 
    
 
   return (
     <>
-        <Wrapper>
+        {/* <Wrapper>
             
             
                  {
@@ -159,7 +193,40 @@ export default function TimeLine() {
                   ))
                 }
             
-        </Wrapper>
+        </Wrapper> */}
+
+
+        <Wrapper>
+            {post.map((item) => (
+                <div className='wrap' key={item.id}>
+                    {user.uid === item.userId ? (<DeleteBtn className='del_btn' onClick={() => onDelete(item)}> X</DeleteBtn>) : null}
+                        
+                    <div className="text_wrap">
+                        
+                        <span className='username'>{item.username}</span>
+
+                        {editingPost === item.id ? (
+                        <textarea className='text_area' value={editedContent} onChange={(e) => setEditedContent(e.target.value)}/>
+                        ) : (<p className='post_desc'>{item.post}</p>)
+}
+                        {user.uid === item.userId ? (
+                        editingPost === item.id ? (
+                            <button className='save_btn' onClick={() => saveEditedPost(item)}>저장</button>
+                        ) : (<EditPost onClick={() => setEditingPost(item.id)}>수정</EditPost>)
+                        ) : null}
+                    </div>
+                    
+                    <div className="img_wrap">
+                        {item.photo ? <img src={item.photo} alt="img" /> : null}
+                        {item.photo && user.uid === item.userId ? (
+                        <EditImage>사진수정</EditImage>
+                        ) : null}
+                    </div>
+                </div>
+            ))}
+            </Wrapper>
+
+
     </>
   )
 }
