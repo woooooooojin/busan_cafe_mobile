@@ -65,6 +65,7 @@ const Wrapper = styled.div`
         border: 1px solid #ccc;
         border-radius: 10px;
         padding: 5px;
+        outline: none;
     }
 `
 const DeleteBtn = styled.button`
