@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { collection, deleteDoc, doc, limit, onSnapshot, orderBy, query, updateDoc } from 'firebase/firestore';
 import { auth, db, storage } from '../firebase';
-import { deleteObject, ref } from 'firebase/storage';
+import { deleteObject, getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 
 
 
@@ -49,6 +49,20 @@ const Wrapper = styled.div`
             width: 70px;
             height: 70px;
         }
+
+        input{
+            display: none;
+        }
+        .save_photo{
+            font-size: 12px;
+            background-color: transparent;
+            padding: 2px 5px;
+            border: 1px solid steelblue;
+            border-radius: 5px;
+            color: steelblue;
+            margin-left: 3px;
+            cursor: pointer;
+        }
     }
 
     .del_btn{
@@ -77,7 +91,7 @@ const DeleteBtn = styled.button`
     border: 1px solid tomato;
     color: tomato;
 `
-const EditImage = styled.button`
+const EditImage = styled.label`
     font-size: 12px;
     background-color: transparent;
     padding: 2px 5px;
@@ -85,6 +99,7 @@ const EditImage = styled.button`
     border-radius: 5px;
     color: steelblue;
     cursor: pointer;
+    display: inline-block;
 `
 const EditPost = styled.button`
     font-size: 12px;
@@ -101,7 +116,8 @@ export default function TimeLine() {
     const [post, setPost] = useState([])
     const user = auth.currentUser
     const [editingPost, setEditingPost] = useState(null); 
-    const [editedContent, setEditedContent] = useState('');//text 수정
+    const [editedContent, setEditedContent] = useState('');//text edit
+    const [editPhoto, setEditPhoto] = useState(null)//photo edit
 
     useEffect(()=>{
         let unsubscribe = null
@@ -162,40 +178,55 @@ export default function TimeLine() {
         } catch (e) {
           console.log(e);
         }
-      };
+    }; //post edit save
 
 
 
+    const saveEditPhoto = async (item)=>{
+
+        if(item.photo){
+            try{
+                const photoRef = ref(storage,`posts/${user.uid}/${item.id}`)
+                await deleteObject(photoRef)
+                await uploadBytes(photoRef,editPhoto)
+
+                const photoUrl = await getDownloadURL(photoRef)
+                await updateDoc(doc(db, 'posts', item.id),{
+                    photo: photoUrl,
+                })
+
+            }catch(e){
+                console.log(e)
+            }finally{
+                setEditPhoto(null)//초기화
+
+            }   
+        }
+       
+    } //photo edit & save
+
+    const onPhotoChange = (e)=>{
+        // const {file} = e.target
+        // if(file && file.length === 1){
+        //     if(file[0].size > 3 * 1024 * 1024){
+        //         e.target.value = ''
+        //         return alert('파일사이즈가 큽니다. 3MB 이하만 업로드 가능합니다.')
+        //     }
+        //     setEditPhoto(file[0])
+        // }
+        const file = e.target.files[0];
+        if (file ) {
+            if(file.size > 3 * 1024 * 1024){
+                e.target.value = ''
+                return alert('파일사이즈가 큽니다. 3MB 이하만 업로드 가능합니다.')
+            }
+            setEditPhoto(file);
+        }
+    } // photo change event
    
 
   return (
     <>
-        {/* <Wrapper>
-            
-            
-                 {
-                    post.map((item) => (
-                    <div className='wrap' key={item.id}>
-                   
-                    {user.uid === item.userId ? <DeleteBtn className='del_btn' onClick={() => onDelete(item)}>X</DeleteBtn> : null}     
-                        <div className="text_wrap">
-                            <span className='username'>{item.username}</span>
-                            <p className='post_desc'>{item.post}</p>
-                            {user.uid === item.userId ? <EditPost>내용수정</EditPost> : null}
-                            
-
-                        </div>
-
-                        <div className="img_wrap">
-                            {item.photo ? <img src={item.photo} alt="img" /> : null}
-                            {item.photo && user.uid === item.userId ? <EditImage>사진수정</EditImage>  : null }
-                        </div>
-                    </div>
-                  ))
-                }
-            
-        </Wrapper> */}
-
 
         <Wrapper>
             {post.map((item) => (
@@ -208,8 +239,8 @@ export default function TimeLine() {
 
                         {editingPost === item.id ? (
                         <textarea className='text_area' value={editedContent} onChange={(e) => setEditedContent(e.target.value)}/>
-                        ) : (<p className='post_desc'>{item.post}</p>)
-}
+                        ) : (<p className='post_desc'>{item.post}</p>)}
+
                         {user.uid === item.userId ? (
                         editingPost === item.id ? (
                             <button className='save_btn' onClick={() => saveEditedPost(item)}>저장</button>
@@ -220,8 +251,10 @@ export default function TimeLine() {
                     <div className="img_wrap">
                         {item.photo ? <img src={item.photo} alt="img" /> : null}
                         {item.photo && user.uid === item.userId ? (
-                        <EditImage>사진수정</EditImage>
+                        <EditImage htmlFor='files'>수정<input onChange={onPhotoChange} type="file" accept='image/*' id='files'/></EditImage>        
                         ) : null}
+                        {item.photo && user.uid === item.userId ? <button className='save_photo' onClick={()=>saveEditPhoto(item)} >저장</button> : null}
+                        
                     </div>
                 </div>
             ))}
