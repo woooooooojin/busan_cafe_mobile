@@ -118,6 +118,7 @@ export default function TimeLine() {
     const [editingPost, setEditingPost] = useState(null); 
     const [editedContent, setEditedContent] = useState('');//text edit
     const [editPhoto, setEditPhoto] = useState(null)//photo edit
+    const [editingPhoto, setEditingPhoto] = useState(false)//photo edit state
 
     useEffect(()=>{
         let unsubscribe = null
@@ -199,6 +200,7 @@ export default function TimeLine() {
                 console.log(e)
             }finally{
                 setEditPhoto(null)//초기화
+                setEditingPhoto(false)
 
             }   
         }
@@ -221,6 +223,7 @@ export default function TimeLine() {
                 return alert('파일사이즈가 큽니다. 3MB 이하만 업로드 가능합니다.')
             }
             setEditPhoto(file);
+            setEditingPhoto(true)
         }
     } // photo change event
    
@@ -253,7 +256,7 @@ export default function TimeLine() {
                         {item.photo && user.uid === item.userId ? (
                         <EditImage htmlFor='files'>수정<input onChange={onPhotoChange} type="file" accept='image/*' id='files'/></EditImage>        
                         ) : null}
-                        {item.photo && user.uid === item.userId ? <button className='save_photo' onClick={()=>saveEditPhoto(item)} >저장</button> : null}
+                        {item.photo && user.uid === item.userId && editingPhoto ? <button className='save_photo' onClick={()=>saveEditPhoto(item)} >저장</button> : null}
                         
                     </div>
                 </div>
