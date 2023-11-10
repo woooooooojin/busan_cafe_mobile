@@ -6,8 +6,7 @@ import { auth, db, storage } from '../firebase'
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
 import { updateProfile } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
-import { collection, disableNetwork, getDocs, limit, orderBy, query, where } from 'firebase/firestore'
-import TimeLine from '../components/TimeLine'
+import { collection, getDocs, limit, orderBy, query, where } from 'firebase/firestore'
 
 
 const Wrapper = styled.div`
@@ -45,6 +44,7 @@ const LogBtn = styled.button`
     border: 1px solid tomato;
     color: tomato;
     background-color: transparent;
+    margin-bottom: 20px;
 `
 const EditName = styled.button`
     font-size: 12px;
@@ -75,6 +75,37 @@ const PostWrap = styled.div`
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    padding: 0 20px;
+    margin-bottom: 70px;
+    
+
+
+    .postwrap{
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        padding: 15px;
+        border: 2px solid #A6C1E8;
+        border-radius: 10px;
+    }
+    .text_wrap{
+        width: 70%;
+        .name{
+            font-size: 18px;
+            font-weight: 550;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .posting{
+            font-size: 16px;
+        }
+    }
+    .img_wrap{
+        width: 30%;
+        img{
+            width: 100%;
+        }
+    }
 `
 
 export default function Profile() {
@@ -161,6 +192,10 @@ export default function Profile() {
     } //userId와 uid가 같은 유저의 포스트를 가져옴
     useEffect(()=>{myPosts()},[])
 
+
+
+
+
   return (
     <>
         <Header/>
@@ -190,8 +225,14 @@ export default function Profile() {
             {user ? 
                 post.map(post=>(
                     <div className="postwrap" key={post.id}{...post}>
-                        <span className="name">{post.username}</span>
-                        <p className="posting">{post.post}</p>
+                        <div className="text_wrap">
+                            <span className="name">{post.username}</span>
+                            <p className="posting">{post.post}</p>
+                        </div>
+
+                        <div className="img_wrap">
+                            {post.photo ? <img src={post.photo} alt="img" /> : null}
+                        </div>
 
                     </div>
                 ))
