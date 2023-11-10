@@ -37,21 +37,24 @@ const Name = styled.span`
 `
 
 const LogBtn = styled.button`
-    width: 80px;
-    padding: 8px 10px;
+    width: 120px;
+    padding: 5px 10px;
     border-radius: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid tomato;
+    color: tomato;
+    background-color: transparent;
 `
 const EditName = styled.button`
     font-size: 12px;
     background-color: transparent;
-    padding: 2px 5px;
+    padding: 5px 15px;
     border: 1px solid steelblue;
-    border-radius: 5px;
+    border-radius: 10px;
     color: steelblue;
     cursor: pointer;
     display: block;
-    margin: 5px auto;
+    margin: 0 auto;
+    margin-top: 10px;
 `
 const NameInput = styled.input`
     display: block;
@@ -62,6 +65,7 @@ const NameInput = styled.input`
     border: 2px solid steelblue;
     border-radius: 20px;
     padding: 0 10px;
+    margin-top: 10px;
 `
 export default function Profile() {
 
@@ -137,7 +141,7 @@ export default function Profile() {
             <Name>
                 {user.displayName ? user.displayName : '사용자'}
                 {editName ? <NameInput onChange={onChangeName} type='text' value={name}/> : null}
-                <EditName onClick={onEditNameClick}>{editName ? "저장" : "수정"}</EditName>
+                <EditName onClick={onEditNameClick}>{editName ? "이름 저장" : "이름 변경"}</EditName>
             </Name>
 
 
