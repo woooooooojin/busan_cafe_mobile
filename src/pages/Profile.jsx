@@ -81,10 +81,10 @@ export default function Profile() {
 
     const navigate = useNavigate()
     const user = auth.currentUser
-    const [profile, setProfile] = useState(user.photoURL ?? null)
+    const [profile, setProfile] = useState(user?.photoURL ?? null)
 
     const [editName, setEditName] = useState(false) //edit name state
-    const [name, setName] = useState(user.displayName ?? '사용자')
+    const [name, setName] = useState(user?.displayName ?? '사용자')
 
     const [post, setPost] = useState([])
 
@@ -142,9 +142,10 @@ export default function Profile() {
 
 
     const myPosts = async()=>{
+
         const postQuery = query(
             collection(db,'posts'),
-            where("userId","==",user.uid),
+            where("userId","==",user?.uid),
             orderBy("createdAt","desc"),
             limit(25)
         )
@@ -175,7 +176,7 @@ export default function Profile() {
             <ProfileInput onChange={onProfileChange} id='avatar' accept='image/*' type='file' />
             
             <Name>
-                {user.displayName ? user.displayName : '사용자'}
+                {user?.displayName ? user.displayName : '사용자'}
                 {editName ? <NameInput onChange={onChangeName} type='text' value={name}/> : null}
                 <EditName onClick={onEditNameClick}>{editName ? "이름 저장" : "이름 변경"}</EditName>
             </Name>
@@ -186,7 +187,7 @@ export default function Profile() {
         </Wrapper>
 
         <PostWrap>
-            {
+            {user ? 
                 post.map(post=>(
                     <div className="postwrap" key={post.id}{...post}>
                         <span className="name">{post.username}</span>
@@ -194,7 +195,7 @@ export default function Profile() {
 
                     </div>
                 ))
-            }
+            :null}
         </PostWrap>
 
 
