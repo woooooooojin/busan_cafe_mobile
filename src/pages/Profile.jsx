@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { styled } from 'styled-components'
-import { auth, storage } from '../firebase'
+import { auth, db, storage } from '../firebase'
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
 import { updateProfile } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
+import { collection, disableNetwork, getDocs, limit, orderBy, query, where } from 'firebase/firestore'
+import TimeLine from '../components/TimeLine'
 
 
 const Wrapper = styled.div`
@@ -67,14 +69,24 @@ const NameInput = styled.input`
     padding: 0 10px;
     margin-top: 10px;
 `
+
+const PostWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+`
+
 export default function Profile() {
 
     const navigate = useNavigate()
     const user = auth.currentUser
-    const [profile, setProfile] = useState(user.photoURL)
+    const [profile, setProfile] = useState(user.photoURL ?? null)
 
     const [editName, setEditName] = useState(false) //edit name state
     const [name, setName] = useState(user.displayName ?? '사용자')
+
+    const [post, setPost] = useState([])
 
     const onProfileChange = async (e)=>{
         const {files} = e.target;
@@ -83,6 +95,10 @@ export default function Profile() {
 
         if(files && files.length === 1){
             const file = files[0]
+            if(file.size > 3 * 1024 * 1024){
+                alert('3MB 이하의 사진만 가능합니다.')
+                return;
+            }
             const locationRef = ref(storage,`profile/${user.uid}`)
             const result = await uploadBytes(locationRef,file)
             const avatarUrl = await getDownloadURL(result.ref) 
@@ -124,6 +140,26 @@ export default function Profile() {
         }
     }//name change
 
+
+    const myPosts = async()=>{
+        const postQuery = query(
+            collection(db,'posts'),
+            where("userId","==",user.uid),
+            orderBy("createdAt","desc"),
+            limit(25)
+        )
+        const snapshot = await getDocs(postQuery)
+        const posts = snapshot.docs.map(doc=>{
+            const {post, createdAt, userId, username, photo} = doc.data()
+            return{
+                post, createdAt, userId, username, photo,
+                id:doc.id
+            }
+        })
+        setPost(posts)
+    } //userId와 uid가 같은 유저의 포스트를 가져옴
+    useEffect(()=>{myPosts()},[])
+
   return (
     <>
         <Header/>
@@ -148,6 +184,18 @@ export default function Profile() {
                 {user ? (<LogBtn onClick={onLogOut}>로그아웃</LogBtn>) : (<LogBtn onClick={onLogIn}>로그인</LogBtn>)}
 
         </Wrapper>
+
+        <PostWrap>
+            {
+                post.map(post=>(
+                    <div className="postwrap" key={post.id}{...post}>
+                        <span className="name">{post.username}</span>
+                        <p className="posting">{post.post}</p>
+
+                    </div>
+                ))
+            }
+        </PostWrap>
 
 
         <Footer/>
