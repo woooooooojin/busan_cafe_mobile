@@ -222,6 +222,7 @@ export default function Profile() {
         </Wrapper>
 
         <PostWrap>
+
             {user ? 
                 post.map(post=>(
                     <div className="postwrap" key={post.id}{...post}>

@@ -129,7 +129,6 @@ export default function Haeundae() {
 
   const [haeundae] = useState(haeundaeData)
   const dispatch = useDispatch()
-  const state = useSelector((state)=>state)
  
 
   return (

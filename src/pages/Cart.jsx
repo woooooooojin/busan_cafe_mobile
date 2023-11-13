@@ -30,15 +30,16 @@ const MapList = styled.ul`
         display: flex;
         align-items: center;
         text-align: center;
-        border: 1px solid #ccc;
+        border: 1px solid #eee;
         border-bottom: 0;
-
+        padding: 5px;
         &:last-child{
-            border-bottom: 1px solid #ccc;
+            border-bottom: 1px solid #eee;
         }
     }
     .cart_idx{
         width: 10%;
+        font-size: 14px;
     }
     .cart_img{
         width: 30%;
@@ -71,10 +72,12 @@ const MapList = styled.ul`
         width: 15%;
     }
     .cart_delete button{
-        width: 25px;
-        height: 25px;
+        width: 27px;
+        height: 27px;
         background-color: #fff;
-        border: 1px solid #888;
+        border: 1px solid tomato;
+        color: tomato;
+        border-radius: 50%;
     }
 
 
@@ -98,8 +101,12 @@ const DeleteAll = styled.div`
     button{
         width: 150px;
         height: 35px;
-        border: 1px solid #ccc;
+        border: 1px solid tomato;
         background-color: #fff;
+        border-radius: 20px;
+        color: tomato;
+
+
     }
   
 `
