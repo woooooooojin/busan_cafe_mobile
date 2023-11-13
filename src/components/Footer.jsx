@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components' 
 import { auth } from '../firebase';
+import { useSelector } from 'react-redux';
 
 const FooterBox = styled.div`
     width: 100%;
@@ -17,7 +18,7 @@ const FooterBox = styled.div`
     .home_box{
         width: 33.3333%;
         height: 100%;
-        border: 1px solid #ccc;
+        border: 1px solid #eee;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -32,7 +33,7 @@ const FooterBox = styled.div`
     .like_box{
         width: 33.3333%;
         height: 100%;
-        border: 1px solid #ccc;
+        border: 1px solid #eee;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -46,7 +47,7 @@ const FooterBox = styled.div`
     .back_box{
         width: 33.3333%;
         height: 100%;
-        border: 1px solid #ccc;
+        border: 1px solid #eee;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -63,14 +64,15 @@ const FooterBox = styled.div`
 
 
 export default function Footer() {
-    
-const navigate = useNavigate();
-const navigateToHome = () => {
-     navigate("/main");
-};
-const navigatePrev = ()=>{
-    navigate(-1)
-}
+    const state = useSelector((state)=>state)
+        
+    const navigate = useNavigate();
+    const navigateToHome = () => {
+        navigate("/main");
+    };
+    const navigatePrev = ()=>{
+        navigate(-1)
+    }
 
 
 
@@ -85,7 +87,8 @@ const navigatePrev = ()=>{
 
             <div className="like_box">
                 <Link to='/cart'>
-                    <img src={ process.env.PUBLIC_URL + '/img/heart2.png'} alt="img" />  
+                    {state.cart.length >= 1 ? <img src={ process.env.PUBLIC_URL + '/img/red_heart.png'} alt="img" /> :<img src={ process.env.PUBLIC_URL + '/img/heart2.png'} alt="img" />  }
+                     
 
                 </Link>
             </div>

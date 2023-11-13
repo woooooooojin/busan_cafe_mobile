@@ -4,7 +4,7 @@ import haeundaeData from './data/haeundaeData'
 import Header from '../components/Header'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addItem } from './store'
 
 const Wrap = styled.div`
@@ -104,13 +104,16 @@ const ItemWrap = styled.div`
   .likebtn{
     width: 100%;
     margin-top: 20px;
-    background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 20px;
     height: 30px;
     color: black;
     cursor: pointer;
+    background-color: #fff;
     
+    .liked{
+      background-color: tomato;
+    }
 
     @media (min-width: 768px) {
       height: 40px;
@@ -126,9 +129,8 @@ export default function Haeundae() {
 
   const [haeundae] = useState(haeundaeData)
   const dispatch = useDispatch()
-
-
-
+  const state = useSelector((state)=>state)
+ 
 
   return (
     <div>
@@ -155,7 +157,6 @@ export default function Haeundae() {
                  
                 </Link>
                 <button className='likebtn' onClick={()=>{dispatch(addItem({loca: val.location ,id: val.id, image: val.image, title: val.title ,count: 1}),alert('찜하기에 추가되었습니다.'))}}>찜하기</button>
-
               </div>
             )
           })

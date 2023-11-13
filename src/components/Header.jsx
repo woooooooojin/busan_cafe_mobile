@@ -7,7 +7,7 @@ import Profile from '../pages/Profile';
 const HeadBox = styled.div`
     width: 100%;
     height: 60px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #eee;
     display: flex;
     align-items: center;
    

@@ -21,7 +21,7 @@ const cart = createSlice({
         },
         deleteAll(state,action){
             return []
-        }
+        },
         // addCount(state,action){
         //     const index = state.findIndex((findId)=>{return findId.id === action.payload})
         //     state[index].count++
@@ -33,6 +33,7 @@ const cart = createSlice({
     
         //     }
         // },
+      
         
     }
 
