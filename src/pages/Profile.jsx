@@ -3,10 +3,10 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { styled } from 'styled-components'
 import { auth, db, storage } from '../firebase'
-import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
+import { deleteObject, getDownloadURL, ref, uploadBytes } from 'firebase/storage'
 import { updateProfile } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
-import { collection, getDocs, limit, orderBy, query, where } from 'firebase/firestore'
+import { collection, deleteDoc, doc, getDocs, limit, onSnapshot, orderBy, query, where } from 'firebase/firestore'
 
 
 const Wrapper = styled.div`
@@ -87,6 +87,22 @@ const PostWrap = styled.div`
         padding: 15px;
         border: 2px solid #A6C1E8;
         border-radius: 10px;
+        position: relative;
+
+        .del_btn{
+            width: 25px;
+            height: 25px;
+            background-color: transparent;
+            font-size: 12px;
+            border: 1px solid tomato;
+            color: tomato;
+            border-radius: 50%;
+            text-align: center;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            cursor: pointer;
+        }
     }
     .text_wrap{
         width: 70%;
@@ -193,8 +209,33 @@ export default function Profile() {
     useEffect(()=>{myPosts()},[])
 
 
+    const onDelete = async(post)=>{
+        const ok = window.confirm('삭제하시겠습니까?')
+        if(!ok)return
 
+        try{
+            await(deleteDoc(doc(db,'posts',post.id)))
 
+            if(post.photo){
+                const photoRef = ref(storage, `posts/${user.uid}/${post.id}`)
+                await deleteObject(photoRef)
+            }
+
+            setPost((prev) => prev.filter((p) => p.id !== post.id)) //해당 아이디와 포스팅된 게시물 아이디와 다른것만 필터링
+        }catch(e){
+            console.log(e)
+        }
+
+    }
+
+    // useEffect(() => {
+    //     const unsubscribe = onSnapshot(collection(db, 'posts'), (snapshot) => {
+    //         const updatedPosts = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+    //         setPost(updatedPosts)
+    //     })
+    
+    //     return () => unsubscribe()
+    // }, []) //구독취소
 
   return (
     <>
@@ -226,6 +267,7 @@ export default function Profile() {
             {user ? 
                 post.map(post=>(
                     <div className="postwrap" key={post.id}{...post}>
+                        <button className="del_btn" onClick={()=>onDelete(post)}>X</button>
                         <div className="text_wrap">
                             <span className="name">{post.username}</span>
                             <p className="posting">{post.post}</p>

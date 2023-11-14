@@ -142,18 +142,19 @@ const Banner = styled.div`
 `
 
 const CommunityBtn = styled.button`
-  width: 150px;
-  height: 45px;
+  width: 200px;
+  height: 50px;
+  line-height: 45px;
   background-color: #fff;
   border: 2px dashed #749BC2;
-  line-height: 45px;
   border-radius: 10px;
-  margin-top: 10px;
   margin-bottom: 10px;
   a{
     color: #749BC2;
     font-weight: 550;
+    font-size: 17px;
   } 
+
 
 `
 
