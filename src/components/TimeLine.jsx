@@ -20,16 +20,19 @@ const Wrapper = styled.div`
         display: flex;
         justify-content: center;
         position: relative;
+
     }
     .text_wrap{
+        word-break: break-all;
         width: 70%;
-        overflow: hidden; //나중에 수정
         .username{
             font-weight: 500;
             font-size: 18px;
         }
         .post_desc{
+
             margin-top: 5px;
+
         }
         .save_btn{
             font-size: 12px;

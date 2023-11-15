@@ -103,12 +103,14 @@ export default function BannerSwiper() {
     </SwiperSlide>
     
     <SwiperSlide>
-        <SlideWrap className='wrap3'>
-            <Desc>
-                <img src={ process.env.PUBLIC_URL + '/img/chat_icon.png'} alt="banner_img" />
-                <p>커뮤니티 서비스 준비중...</p>
-            </Desc>
-        </SlideWrap>
+        <Link to='/community'>
+            <SlideWrap className='wrap3'>
+                <Desc>
+                    <img src={ process.env.PUBLIC_URL + '/img/chat_icon.png'} alt="banner_img" />
+                    <p>커뮤니티 서비스 실시 !!</p>
+                </Desc>
+            </SlideWrap>
+        </Link>
     </SwiperSlide>
    
   </Swiper>

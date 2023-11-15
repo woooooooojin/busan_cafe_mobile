@@ -1,7 +1,13 @@
 import React from 'react'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default function Sasang() {
   return (
-    <div>Sasang</div>
+    <>
+      <Header/>
+      <div>sasang</div>
+      <Footer/>
+  </>
   )
 }

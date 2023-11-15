@@ -14,8 +14,6 @@ const FlexBox = styled.div`
   top: 80px;
   left: 50%;
   transform: translateX(-50%);
-
-
  .main_wrap{
     @media (min-width: 768px) {
         padding: 30px;
@@ -148,7 +146,7 @@ const CommunityBtn = styled.button`
   background-color: #fff;
   border: 2px dashed #749BC2;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   a{
     color: #749BC2;
     font-weight: 550;
