@@ -106,6 +106,7 @@ const PostWrap = styled.div`
     }
     .text_wrap{
         width: 70%;
+        word-break: break-all;
         .name{
             font-size: 18px;
             font-weight: 550;

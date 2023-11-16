@@ -10,10 +10,10 @@ const FlexBox = styled.div`
   text-align: center;
   line-height: 70px;
   font-size: 14px;
-  position: absolute;
+  /* position: absolute;
   top: 80px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); */
  .main_wrap{
     @media (min-width: 768px) {
         padding: 30px;
@@ -137,6 +137,7 @@ const FlexBox = styled.div`
 `
 const Banner = styled.div`
   width: 100%;
+  margin-top: 15px;
 `
 
 const CommunityBtn = styled.button`
@@ -146,7 +147,7 @@ const CommunityBtn = styled.button`
   background-color: #fff;
   border: 2px dashed #749BC2;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin: 10px 0;
   a{
     color: #749BC2;
     font-weight: 550;
