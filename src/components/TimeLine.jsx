@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { collection, deleteDoc, doc, limit, onSnapshot, orderBy, query, updateDoc } from 'firebase/firestore';
 import { auth, db, storage } from '../firebase';
 import { deleteObject, getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { updateProfile } from 'firebase/auth';
 
 
 
@@ -20,11 +21,25 @@ const Wrapper = styled.div`
         display: flex;
         justify-content: center;
         position: relative;
-
+        .profileImg{
+            width: 15%;
+            height: auto;
+            position: relative;
+            img{
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
     }
     .text_wrap{
         word-break: break-all;
-        width: 70%;
+        width: 55%;
+        padding-left: 5px;
         .username{
             font-weight: 500;
             font-size: 18px;
@@ -122,6 +137,7 @@ export default function TimeLine() {
     const [editedContent, setEditedContent] = useState('');//text edit
     const [editPhoto, setEditPhoto] = useState(null)//photo edit
     const [editingPhoto, setEditingPhoto] = useState(false)//photo edit state
+    const [profile, setProfile] = useState(null) // profile img
 
     useEffect(()=>{
         let unsubscribe = null
@@ -143,8 +159,28 @@ export default function TimeLine() {
                 })
                 setPost(posting)
             })
-        }; 
+        }; //fetch post
+
+        const fetchProfile = async ()=>{
+            if(user){
+                const profileRef = ref(storage, `profile/${user.uid}`)
+
+                try{
+                    const url = await getDownloadURL(profileRef)
+                    setProfile(url)
+
+                }catch(e){
+                    console.log(e)
+                }
+
+                
+               
+            }
+        } // profile img
+
         fetchPosts()
+        fetchProfile()
+
         return()=>{
             unsubscribe && unsubscribe()
         }   
@@ -238,10 +274,14 @@ export default function TimeLine() {
             {post.map((item) => (
                 <div className='wrap' key={item.id}>
                     {user.uid === item.userId ? (<DeleteBtn className='del_btn' onClick={() => onDelete(item)}> X</DeleteBtn>) : null}
+                    
+                    <div className="profileImg">
+                        <img src={profile} alt="img" />
+                    </div>
                         
                     <div className="text_wrap">
-                        
                         <span className='username'>{item.username}</span>
+                        
 
                         {editingPost === item.id ? (
                         <textarea className='text_area' value={editedContent} onChange={(e) => setEditedContent(e.target.value)}/>
