@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import styled from 'styled-components' 
-import { auth } from '../firebase';
-import Profile from '../pages/Profile';
+
 
 const HeadBox = styled.div`
     width: 100%;
@@ -17,11 +16,14 @@ const HeadBox = styled.div`
 
     }
     .logo_box p{
-        text-shadow: 0 0 5px black;
+        width: 100%;
+        text-shadow: 3px 3px 15px black;
         color: #fff;
-        font-size: 30px;
+        font-size: 35px;
+        font-weight: 600;
         text-align: left;
         padding:  0 10px;
+        
      
     }
    
@@ -62,7 +64,7 @@ export default function Header() {
     <div>
         <HeadBox>
             <div className="logo_box" onClick={goToHome}>
-                <p>Busan Cafe</p>
+                <p>Caffeine</p>
             </div>
 {/*            
             {user ? 
