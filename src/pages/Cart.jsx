@@ -50,6 +50,7 @@ const MapList = styled.ul`
     img{
         width: 100%;
         height: 120px;
+        border-radius: 10px;
         @media (min-width: 768px) {
             height: 235px;
         }
