@@ -26,6 +26,7 @@ const LogoBox = styled.div`
         }
   
     }
+  
 
     .logo_wrap{
         width: 300px;
@@ -84,13 +85,13 @@ return (
     <div>
         <LogoBox>
             <AttentionSeeker tada>
-                <h1>Busan Cafe</h1>
+                <h1>Caffeine</h1>
 
                 <div className="logo_wrap">
                     <img src={ process.env.PUBLIC_URL + '/img/cafe_icon.png'} alt="img"/>
                 </div>
 
-                <p>ⓒ 2023. Woojin all rights reserved.</p>
+                <p>ⓒ 2023. Woooooooojin all rights reserved.</p>
 
             </AttentionSeeker>
         </LogoBox>

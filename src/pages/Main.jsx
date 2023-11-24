@@ -14,6 +14,13 @@ const FlexBox = styled.div`
   top: 80px;
   left: 50%;
   transform: translateX(-50%); */
+  @media (min-width: 768px) {
+    margin-bottom: 70px;
+       
+    }
+    @media (min-width: 1440px) {
+      margin-bottom: 70px;
+    }
  .main_wrap{
     @media (min-width: 768px) {
         padding: 30px;
@@ -147,10 +154,22 @@ const CommunityBtn = styled.button`
   border: 2px dashed #749BC2;
   border-radius: 10px;
   margin: 10px 0;
+  @media (min-width: 768px) {
+        width: 250px;
+  }
+  @media (min-width: 1440px) {
+        width: 500px;
+        height: 80px;
+        line-height: 80px;
+  }
   a{
     color: #749BC2;
     font-weight: 550;
     font-size: 17px;
+
+    @media (min-width: 1440px) {
+        font-size: 28px;
+  }
   } 
 
 
