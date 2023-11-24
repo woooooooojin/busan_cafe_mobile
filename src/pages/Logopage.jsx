@@ -18,7 +18,6 @@ const LogoBox = styled.div`
         text-shadow: 0 0 10px black;
         color: #fff;
         font-size: 40px;
-        margin-top: 50px;
         @media (min-width: 768px) {
             font-size: 50px;
         }
