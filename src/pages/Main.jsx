@@ -137,7 +137,6 @@ const FlexBox = styled.div`
 `
 const Banner = styled.div`
   width: 100%;
-  margin-top: 15px;
 `
 
 const CommunityBtn = styled.button`
