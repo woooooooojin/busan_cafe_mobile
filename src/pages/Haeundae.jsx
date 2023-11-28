@@ -156,7 +156,11 @@ export default function Haeundae() {
                  
                 </Link>
                 <button className='likebtn' onClick={()=>{dispatch(addItem({loca: val.location ,id: val.id, image: val.image, title: val.title ,count: 1}),alert('찜하기에 추가되었습니다.'))}}>찜하기</button>
+
               </div>
+              
+
+
             )
           })
         }

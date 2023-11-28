@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useParams } from 'react-router-dom'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import { Navigation, Pagination, A11y, Autoplay } from 'swiper';
 import 'swiper/css';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../../pages/store';
+
+import Review from '../../components/Review';
+import ReviewTimeline from '../../components/ReviewTimeline';
 
 const DetailWrap = styled.div`
     width: 100%;
@@ -109,6 +111,8 @@ const DetailWrap = styled.div`
     font-size: 18px;
    }
 
+
+
 `
 
 
@@ -117,6 +121,8 @@ export default function DetailHaeundae(props) {
     const {haeundae} = props
     const {id} = useParams()
     const dispatch = useDispatch()
+
+
 
   return (
     <div>
@@ -164,7 +170,11 @@ export default function DetailHaeundae(props) {
             </div>
 
         </div>
-        
+
+       
+
+        <Review id={haeundae[id].id}/>
+        <ReviewTimeline id={haeundae[id].id}/>
 
 
 

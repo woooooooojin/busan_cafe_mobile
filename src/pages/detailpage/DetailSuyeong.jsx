@@ -9,6 +9,8 @@ import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../../pages/store';
+import Review from '../../components/Review';
+import ReviewTimeline from '../../components/ReviewTimeline';
 
 const DetailWrap = styled.div`
     width: 100%;
@@ -166,7 +168,8 @@ export default function DetailSuyeong(props) {
         </div>
         
 
-
+        <Review id={suyeong[id].id}/>
+        <ReviewTimeline id={suyeong[id].id}/>
 
         </DetailWrap>
         <Footer/>
