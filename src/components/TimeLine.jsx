@@ -146,7 +146,7 @@ export default function TimeLine() {
             const postQuery = query(
                 collection(db,'posts'), //어떤 컬렉션을 쿼리하고 싶은지 firestore 인스턴스를 매개변수로 넘겨줌
                 orderBy('createdAt',"desc"), //createdAt 기준으로 내림차순
-                limit(25)
+                limit(15)
             )
             
                 unsubscribe = await onSnapshot(postQuery, (snapshot)=>{
