@@ -14,6 +14,9 @@ const FlexBox = styled.div`
   top: 80px;
   left: 50%;
   transform: translateX(-50%); */
+
+ 
+
   @media (min-width: 768px) {
     margin-bottom: 70px;
        

@@ -17,7 +17,7 @@ const HeadBox = styled.div`
     }
     .logo_box p{
         width: 100%;
-        text-shadow: 3px 3px 15px black;
+        text-shadow: 3px 3px 10px black;
         color: #fff;
         font-size: 35px;
         font-weight: 600;

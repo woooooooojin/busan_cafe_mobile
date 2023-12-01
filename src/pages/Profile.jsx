@@ -28,6 +28,8 @@ const ProfileUpload = styled.label`
 `
 const ProfileImg = styled.img`
     width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 50%;
 `
 const ProfileInput = styled.input`
     display: none;
