@@ -89,9 +89,30 @@ const TitleBox = styled.div`
     margin-bottom: 30px;
     
     h4{
-        text-align: center;
-        font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+    letter-spacing: 5px;
+    color: black;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '[';
+      display: inline-block;
+      position: relative;
+      top: 1px;
+      height: 100%;
+      color: steelblue;
+      font-size: 30px;
     }
+
+    &::after { content: ']'; }
+      @media (min-width: 768px) {
+        font-size: 22px;
+      }
+
+
+  }
 `
 
 const DeleteAll = styled.div`

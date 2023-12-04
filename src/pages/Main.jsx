@@ -215,7 +215,7 @@ export default function Main() {
         </div>
 
         <CommunityBtn>
-          <Link to='/community'>커뮤티니 바로가기</Link>
+          <Link to='/community'>카페인 커뮤니티</Link>
         </CommunityBtn>
         </FlexBox> 
 

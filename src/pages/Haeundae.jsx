@@ -16,15 +16,27 @@ const Tit = styled.div`
   width: 100%;
 
   h4{
+    margin-top: 10px;
     text-align: center;
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: 400;
-    padding-left: 10px;
+    letter-spacing: 5px;
+    color: black;
+    position: relative;
 
-    @media (min-width: 768px) {
-      font-size: 22px;
+    &::before,
+    &::after {
+      content: '[';
+      display: inline-block;
+      position: relative;
+      top: 1px;
+      height: 100%;
+      color: steelblue;
+      font-size: 30px;
     }
+
+    &::after { content: ']'; }
+      @media (min-width: 768px) {
+        font-size: 22px;
+      }
 
 
   }
