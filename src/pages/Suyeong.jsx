@@ -21,6 +21,7 @@ const Tit = styled.div`
     letter-spacing: 5px;
     color: black;
     position: relative;
+    font-weight: 500;
 
     &::before,
     &::after {

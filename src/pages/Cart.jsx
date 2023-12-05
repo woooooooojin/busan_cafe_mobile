@@ -85,7 +85,6 @@ const MapList = styled.ul`
 `
 const TitleBox = styled.div`
     width: 100%;
-    margin-top: 20px;
     margin-bottom: 30px;
     
     h4{
@@ -94,6 +93,7 @@ const TitleBox = styled.div`
     letter-spacing: 5px;
     color: black;
     position: relative;
+    font-weight: 500;
 
     &::before,
     &::after {
