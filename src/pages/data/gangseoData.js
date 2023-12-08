@@ -38,6 +38,19 @@ const gangseoData= [
         subimage3: process.env.PUBLIC_URL+'/img/gangseo/gangseo_03_sub3.jpeg',
         time : '08:30 ~ 20:00',
     },
+    {
+        id: 'gangseo04',
+        image: process.env.PUBLIC_URL+'/img/gangseo/gangseo_04_main.jpeg',
+        desc: '이태리 감성의 에스프레소 바!',
+        title: '디베르소',
+        location: '부산 강서구 명지새동네길2번길 83 2층',
+        location2:'명지동 3215-5', 
+        menu: process.env.PUBLIC_URL+'/img/gangseo/gangseo_04_menu.jpeg',
+        subimage1: process.env.PUBLIC_URL+'/img/gangseo/gangseo_04_sub1.jpeg',
+        subimage2: process.env.PUBLIC_URL+'/img/gangseo/gangseo_04_sub2.jpeg',
+        subimage3: process.env.PUBLIC_URL+'/img/gangseo/gangseo_04_sub3.jpeg',
+        time : '10:00 ~ 19:00',
+    },
 ]
 
 export default gangseoData

@@ -32,7 +32,7 @@ const Tit = styled.div`
       top: 1px;
       height: 100%;
       color: steelblue;
-      font-size: 30px;
+      font-size: 25px;
     }
 
     &::after { content: ']'; }
@@ -148,7 +148,7 @@ export default function Gangseo() {
       <Wrap>
       <Header />
       <Tit>
-        <h4>해운대 / 기장</h4>
+        <h4>강서구</h4>
       </Tit>
 
       <ItemWrap>
