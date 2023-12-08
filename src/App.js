@@ -26,6 +26,8 @@ import Profile from './pages/Profile';
 import Community from './components/Community';
 import gangseoData from './pages/data/gangseoData';
 import dongraeData from './pages/data/dongraeData';
+import DetailDongrae from './pages/detailpage/DetailDongrae';
+import DetailGangseo from './pages/detailpage/DetailGangseo';
 
 
 
@@ -67,6 +69,8 @@ function App() {
         
         <Route path='/haeundae/detailhaeundae/:id' element={<DetailHaeundae haeundae = {haeundae}/>}/>
         <Route path='/suyeong/detailsuyeong/:id' element={<DetailSuyeong suyeong = {suyeong}/>}/>
+        <Route path='/dongrae/detaildongrae/:id' element={<DetailDongrae dongrae = {dongrae}/>}/>
+        <Route path='/gangseo/detailgangseo/:id' element={<DetailGangseo gangseo = {gangseo}/>}/>
 
         <Route path='/cart' element={<Cart/>}></Route>
         <Route path ='/profile' element={<Profile/>}></Route>

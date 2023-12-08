@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
 import styled from 'styled-components' 
-import haeundaeData from './data/haeundaeData'
 import Header from '../components/Header'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
@@ -159,7 +158,7 @@ export default function Dongrae() {
             dongrae.map((val,idx)=>{
               return(
                 <div className="itembox" key={idx}>
-                  <Link>
+                  <Link to={`/dongrae/detaildongrae/${idx}`}>
                     <div className="item_img_wrap">
                       <img src={val.image} alt="img"/>
                     </div>

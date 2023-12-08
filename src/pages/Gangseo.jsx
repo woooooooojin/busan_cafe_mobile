@@ -157,7 +157,7 @@ export default function Gangseo() {
           gangseo.map((val,idx)=>{
             return(
               <div className="itembox" key={idx}>
-                <Link >
+                <Link to={`/gangseo/detailgangseo/${idx}`}>
                   <div className="item_img_wrap">
                     <img src={val.image} alt="img"/>
                   </div>
