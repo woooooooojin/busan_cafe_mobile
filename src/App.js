@@ -25,6 +25,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Profile from './pages/Profile';
 import Community from './components/Community';
 import gangseoData from './pages/data/gangseoData';
+import dongraeData from './pages/data/dongraeData';
 
 
 
@@ -36,6 +37,7 @@ function App() {
   const [haeundae] = useState(haeundaeData)
   const [suyeong] = useState(suyeongData)
   const [gangseo] = useState(gangseoData)
+  const [dongrae] = useState(dongraeData)
 
   return (
     <div className="App">
