@@ -103,7 +103,7 @@ const TitleBox = styled.div`
       top: 1px;
       height: 100%;
       color: steelblue;
-      font-size: 30px;
+      font-size: 25px;
     }
 
     &::after { content: ']'; }

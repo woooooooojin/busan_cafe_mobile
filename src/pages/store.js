@@ -17,10 +17,24 @@ const cart = createSlice({
         },
         deleteItem(state,action){
             const index = state.findIndex((findId)=>{return findId.id === action.payload})
-            state.splice(index,1)
+            const ok = window.confirm('삭제 하시겠습니까?')
+            if(ok){
+                state.splice(index,1)
+
+            }else if(!ok){
+                return
+            }
+            
         },
         deleteAll(state,action){
-            return []
+            const ok = window.confirm('전체삭제 하시겠습니까?')
+            if(ok){
+                return []
+
+            }else if(!ok){
+                return
+            }
+
         },
         // addCount(state,action){
         //     const index = state.findIndex((findId)=>{return findId.id === action.payload})

@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addItem } from './store'
 import { useState } from 'react'
 import gangseoData from './data/gangseoData'
@@ -154,7 +154,7 @@ export default function Gangseo() {
       <ItemWrap>
 
         {
-          gangseoData.map((val,idx)=>{
+          gangseo.map((val,idx)=>{
             return(
               <div className="itembox" key={idx}>
                 <Link >
