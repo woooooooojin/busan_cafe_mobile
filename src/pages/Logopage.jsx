@@ -67,7 +67,7 @@ const navigate = useNavigate()
 const timeout = ()=>{
     setTimeout(() => {
 		navigate('/main');
-	}, 2000);
+	}, 1800);
     
 }
 
@@ -91,9 +91,10 @@ return (
                     <img src={ process.env.PUBLIC_URL + '/img/cafe_icon.png'} alt="img"/>
                 </div>
 
-                <p>ⓒ 2023. Woooooooojin all rights reserved.</p>
+                
 
             </AttentionSeeker>
+            <p>ⓒ 2023. Woooooooojin all rights reserved.</p>
         </LogoBox>
 
 
