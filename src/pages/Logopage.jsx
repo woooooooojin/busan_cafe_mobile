@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 const LogoBox = styled.div`
     width: 100%;
-    height: calc(100vh - 50px);
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -81,7 +81,7 @@ useEffect(() => {
 
 
 return (
-    <div>
+    <>
         <LogoBox>
             <AttentionSeeker tada>
 
@@ -98,6 +98,6 @@ return (
         </LogoBox>
 
 
-    </div>
+    </>
   )
 }
