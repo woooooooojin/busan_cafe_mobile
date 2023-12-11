@@ -49,7 +49,7 @@ const LogoBox = styled.div`
     p{
         font-size: 14px;
         color: #777;
-        margin-bottom: 10px;
+        padding-bottom: 20px;
         @media (min-width: 768px) {
          font-size: 16px;
         }
@@ -66,7 +66,7 @@ const navigate = useNavigate()
 
 const timeout = ()=>{
     setTimeout(() => {
-		navigate('/main');
+		// navigate('/main');
 	}, 1800);
     
 }
