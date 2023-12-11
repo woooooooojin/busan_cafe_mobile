@@ -66,7 +66,7 @@ const navigate = useNavigate()
 
 const timeout = ()=>{
     setTimeout(() => {
-		// navigate('/main');
+		navigate('/main');
 	}, 1800);
     
 }
