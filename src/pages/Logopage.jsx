@@ -30,7 +30,7 @@ const LogoBox = styled.div`
 
     .logo_wrap{
         width: 300px;
-        height: 300px;
+        /* height: 300px; */
         @media (min-width: 768px) {
            width: 450px;
            height: 450px;
