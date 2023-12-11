@@ -49,7 +49,6 @@ const LogoBox = styled.div`
     p{
         font-size: 14px;
         color: #777;
-        padding-bottom: 20px;
         @media (min-width: 768px) {
          font-size: 16px;
         }
@@ -85,7 +84,7 @@ return (
     <div>
         <LogoBox>
             <AttentionSeeker tada>
-                
+
                 <h1>Caffeine</h1>
 
                 <div className="logo_wrap">
