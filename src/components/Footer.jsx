@@ -66,7 +66,7 @@ const CartCount = styled.p`
     /* border-radius: 50%; */
     position: absolute;
     left: 50%;
-    top: 46%;
+    top: 48%;
     transform: translate(-50%, -50%);
     text-align: center;
     font-size: 12px;
@@ -101,7 +101,7 @@ export default function Footer() {
 
             <div className="like_box">
                 <CartCount>{state.cart.length === 0 ? null:state.cart.length}</CartCount>
-                
+
                 <Link to='/cart'>
                     {state.cart.length >= 1 ? <img src={ process.env.PUBLIC_URL + '/img/red_heart.png'} alt="img" /> :<img src={ process.env.PUBLIC_URL + '/img/heart2.png'} alt="img" />  }
                      
