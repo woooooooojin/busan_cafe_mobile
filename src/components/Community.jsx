@@ -5,12 +5,13 @@ import PostForm from './PostForm'
 import TimeLine from './TimeLine'
 import styled from 'styled-components'
 
-const Title = styled.h2`
+const Title = styled.h4`
   margin-top: 10px;
   text-align: center;
   letter-spacing: 5px;
   color: black;
   position: relative;
+  font-weight: 500;
 
   &::before,
   &::after {
@@ -20,7 +21,7 @@ const Title = styled.h2`
     top: 1px;
     height: 100%;
     color: steelblue;
-    font-size: 30px;
+    font-size: 25px;
   }
 
   &::after { content: ']'; }

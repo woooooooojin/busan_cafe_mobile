@@ -38,6 +38,7 @@ const FooterBox = styled.div`
         justify-content: center;
         align-items: center;
         border-right:0;
+        position: relative;
     }
     .like_box img{
         width: 30px;
@@ -58,6 +59,19 @@ const FooterBox = styled.div`
     }
 
   
+`
+const CartCount = styled.p`
+    /* width: 20px;
+    height: 20px; */
+    /* border-radius: 50%; */
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    font-weight: bold;
 `
 
 
@@ -86,6 +100,8 @@ export default function Footer() {
             </div>
 
             <div className="like_box">
+                <CartCount>{state.cart.length === 0 ? null:state.cart.length}</CartCount>
+                
                 <Link to='/cart'>
                     {state.cart.length >= 1 ? <img src={ process.env.PUBLIC_URL + '/img/red_heart.png'} alt="img" /> :<img src={ process.env.PUBLIC_URL + '/img/heart2.png'} alt="img" />  }
                      
