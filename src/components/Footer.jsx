@@ -66,7 +66,7 @@ const CartCount = styled.p`
     /* border-radius: 50%; */
     position: absolute;
     left: 50%;
-    top: 48%;
+    top: 45.5%;
     transform: translate(-50%, -50%);
     text-align: center;
     font-size: 12px;
