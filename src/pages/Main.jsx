@@ -1,4 +1,3 @@
-import React from 'react'
 import Header from '../components/Header'
 import styled from 'styled-components' 
 import Footer from '../components/Footer'
@@ -178,7 +177,10 @@ const CommunityBtn = styled.button`
 
 `
 
+
+
 export default function Main() {
+
   return (
     <div>
       <Header/>
