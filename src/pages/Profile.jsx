@@ -120,7 +120,8 @@ const PostWrap = styled.div`
         }
     }
     .img_wrap{
-        width: 30%;
+        width: calc(30% - 25px);
+        margin-right: 25px;
         img{
             width: 100%;
         }
@@ -209,7 +210,9 @@ export default function Profile() {
         })
         setPost(posts)
     } //userId와 uid가 같은 유저의 포스트를 가져옴
-    useEffect(()=>{myPosts()},[])
+    useEffect(()=>{
+        myPosts()
+    },[])
 
 
     const onDelete = async(post)=>{
