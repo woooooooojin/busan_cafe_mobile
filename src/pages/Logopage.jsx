@@ -72,11 +72,10 @@ const timeout = ()=>{
 
 useEffect(() => {
 	timeout();
-	return () => {
-	    clearTimeout(timeout);
-	};
+	// return () => {
+	//     clearTimeout(timeout);
+	// };
 }); 
-//랜더링되면 timeout실행 실행 후 클리어
 
 
 
