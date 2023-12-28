@@ -32,14 +32,14 @@ import DetailGangseo from './pages/detailpage/DetailGangseo';
 
 
 
-
-
 function App() {
 
   const [haeundae] = useState(haeundaeData)
   const [suyeong] = useState(suyeongData)
   const [gangseo] = useState(gangseoData)
   const [dongrae] = useState(dongraeData)
+
+  
 
   return (
     <div className="App">
@@ -50,7 +50,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Logopage/>}></Route>
 
-        <Route path='/main' element={<ProtectedRoute><Main/></ProtectedRoute>}></Route>
+        <Route path='/main' element={<Main/>}></Route>
+        <Route path='/protected' element={<ProtectedRoute><Main/></ProtectedRoute>}></Route>
         <Route path='/bukgu' element={<Bukgu/>}></Route> 
         <Route path='/dongrae' element={<Dongrae/>}></Route> 
         <Route path='/yeonjae' element={<Yeonjae/>}></Route> 
