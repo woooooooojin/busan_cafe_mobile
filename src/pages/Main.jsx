@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
 import BannerSwiper from '../components/BannerSwiper'
+import ChannelTalk from '../components/ChannelTalk'
 
 const FlexBox = styled.div`
   width: 100%;
@@ -221,6 +222,7 @@ export default function Main() {
         </CommunityBtn>
         </FlexBox> 
 
+        <ChannelTalk/>
 
       <Footer/>
 
