@@ -150,13 +150,13 @@ const Banner = styled.div`
 `
 
 const CommunityBtn = styled.button`
-  width: 200px;
-  height: 50px;
-  line-height: 45px;
+  width: calc(100% - 20px);
+  height: 55px;
+  line-height: 50px;
   background-color: #fff;
   border: 2px dashed #749BC2;
   border-radius: 10px;
-  margin: 10px 0;
+  letter-spacing: 5px;
   @media (min-width: 768px) {
         width: 250px;
   }
@@ -168,7 +168,7 @@ const CommunityBtn = styled.button`
   a{
     color: #749BC2;
     font-weight: 550;
-    font-size: 17px;
+    font-size: 20px;
 
     @media (min-width: 1440px) {
         font-size: 28px;
@@ -218,7 +218,7 @@ export default function Main() {
         </div>
 
         <CommunityBtn>
-          <Link to='/community'>카페인 커뮤니티</Link>
+          <Link to='/community'>Community</Link>
         </CommunityBtn>
         </FlexBox> 
 
