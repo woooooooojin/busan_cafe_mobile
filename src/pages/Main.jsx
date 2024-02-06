@@ -10,10 +10,7 @@ const FlexBox = styled.div`
   text-align: center;
   line-height: 70px;
   font-size: 14px;
-  /* position: absolute;
-  top: 80px;
-  left: 50%;
-  transform: translateX(-50%); */
+ 
 
  
 

@@ -51,7 +51,7 @@ function App() {
         <Route path='/' element={<Logopage/>}></Route>
 
         <Route path='/main' element={<ProtectedRoute><Main/></ProtectedRoute>}></Route>
-        {/* <Route path='/protected' element={<Main/></ProtectedRoute>}></Route> */}
+        {/* <Route path='/protected' element={<ProtectedRoute></ProtectedRoute>}></Route> */}
         <Route path='/bukgu' element={<Bukgu/>}></Route> 
         <Route path='/dongrae' element={<Dongrae/>}></Route> 
         <Route path='/yeonjae' element={<Yeonjae/>}></Route> 
