@@ -31,7 +31,7 @@ const FlexBox = styled.div`
  }
 
   .box1{
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .box1, .box2, .box3, .box4{
