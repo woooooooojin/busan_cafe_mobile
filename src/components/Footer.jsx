@@ -9,6 +9,7 @@ const FooterBox = styled.div`
     position: fixed;
     bottom: 0;
     display: flex;
+    z-index: 9999;
 
     div{
         background-color: #fff;

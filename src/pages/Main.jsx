@@ -4,12 +4,14 @@ import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
 import BannerSwiper from '../components/BannerSwiper'
 import ChannelTalk from '../components/ChannelTalk'
+import MainItemSwiper from '../components/MainItemSwiper'
 
 const FlexBox = styled.div`
   width: 100%;
   text-align: center;
   line-height: 70px;
   font-size: 14px;
+  margin-bottom: 20px;
  
 
  
@@ -214,10 +216,13 @@ export default function Main() {
           </div>
         </div>
 
+
         <CommunityBtn>
           <Link to='/community'>Community</Link>
         </CommunityBtn>
         </FlexBox> 
+        <MainItemSwiper/>
+
 
         <ChannelTalk/>
 
