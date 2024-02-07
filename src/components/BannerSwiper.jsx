@@ -76,8 +76,7 @@ export default function BannerSwiper() {
     spaceBetween={0}
     slidesPerView={1}
     autoplay={{delay : 2500, disableOnInteraction : false}}
-    loop={true}
-   
+    loop={true}   
     
   >
     <SwiperSlide>

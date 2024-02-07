@@ -64,7 +64,7 @@ export default function ReviewTimeline({id}) {
     const Wrapper = styled.div`
         width: 100%;
         padding: 0 10px;
-        margin-bottom: 30px;
+        margin-bottom: 70px;
 
         .wrap{
             display: flex;
