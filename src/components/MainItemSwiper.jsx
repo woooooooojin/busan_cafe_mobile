@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 
 const SlideWrap = styled.div`
     height: 200px;
-    margin-bottom: 100px;
-    border: 1px solid #eee;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
    border-radius: 20px;
   
   
@@ -46,7 +46,8 @@ export default function MainItemSwiper() {
             spaceBetween={10}
             slidesPerView={2.5}
             // autoplay={{delay : 2500, disableOnInteraction : true}}
-            loop={true}   
+            loop={true}  
+            allowTouchMove={true} 
             style={{display:'flex', width: '100%', padding : '0 10px'}}
             
         >
@@ -79,11 +80,11 @@ export default function MainItemSwiper() {
             </SwiperSlide>
             
             <SwiperSlide>
-                <Link to='/community'>
+                <Link to='/jungu'>
                     <SlideWrap className='wrap3'>
                         <Desc>
-                            <img src={ process.env.PUBLIC_URL + '/img/chat_icon.png'} alt="banner_img" />
-                             <p>지역1</p>
+                            <img src={ process.env.PUBLIC_URL + '/img/busantower.png'} alt="banner_img" />
+                             <p>남포동</p>
 
                         </Desc>
 
@@ -93,11 +94,11 @@ export default function MainItemSwiper() {
             </SwiperSlide>
 
             <SwiperSlide>
-                <Link to='/community'>
+                <Link to='/gangseo'>
                     <SlideWrap className='wrap3'>
                         <Desc>
-                            <img src={ process.env.PUBLIC_URL + '/img/chat_icon.png'} alt="banner_img" />
-                             <p>지역2</p>
+                            <img src={ process.env.PUBLIC_URL + '/img/gangseogu01.png'} alt="banner_img" />
+                             <p>강서구</p>
 
                         </Desc>
 

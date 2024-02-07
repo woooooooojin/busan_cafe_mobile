@@ -146,16 +146,21 @@ const FlexBox = styled.div`
 `
 const Banner = styled.div`
   width: 100%;
+  margin-bottom: 10px;
 `
 
 const CommunityBtn = styled.button`
   width: calc(100% - 20px);
+  margin: 0 10px;
   height: 55px;
   line-height: 50px;
   background-color: #fff;
-  border: 2px dashed #749BC2;
+  /* border: 2px dashed #749BC2; */
+  border: 2px dashed #ccc;
   border-radius: 10px;
   letter-spacing: 5px;
+  margin-bottom: 30px;
+  margin-top: 30px;
   @media (min-width: 768px) {
         width: 250px;
   }
@@ -165,15 +170,23 @@ const CommunityBtn = styled.button`
         line-height: 80px;
   }
   a{
-    color: #749BC2;
     font-weight: 550;
     font-size: 20px;
+    color: #777;
 
     @media (min-width: 1440px) {
         font-size: 28px;
   }
   } 
 
+
+`
+const Title = styled.h4`
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-weight: normal;
 
 `
 
@@ -187,11 +200,15 @@ export default function Main() {
 
     
          
-     
-        <FlexBox> 
-          <Banner>
+        <Banner>
             <BannerSwiper/>
-          </Banner>
+        </Banner>
+
+        {/* <MainItemSwiper/> */}
+
+
+        <FlexBox> 
+         
         <div className="main_wrap">
           <div className="box1">
             <div className="box1_1"><Link to='/bukgu'>북구</Link></div>
@@ -217,11 +234,11 @@ export default function Main() {
         </div>
 
 
+        
+        </FlexBox> 
         <CommunityBtn>
           <Link to='/community'>Community</Link>
         </CommunityBtn>
-        </FlexBox> 
-        <MainItemSwiper/>
 
 
         <ChannelTalk/>

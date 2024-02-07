@@ -56,6 +56,8 @@ const Desc = styled.div`
     p{
         width: calc(100% - 70px - 3%);
         height: 70px;
+        line-height: 70px;
+        text-align: center;
         font-size: 18px;
         font-weight: 550;
         color: #fff;
