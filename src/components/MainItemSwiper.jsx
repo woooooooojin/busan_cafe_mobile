@@ -8,30 +8,30 @@ import { Link } from 'react-router-dom';
 
 
 const SlideWrap = styled.div`
-    height: 200px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-   border-radius: 20px;
-  
+    height: 80px;
+    /* border: 1px solid #777; */
+    border-radius: 20px;
+    margin: 15px 0;
+     box-shadow: 3px 3px 7px black;
   
 `
 const Desc = styled.div`
     width: 100%;
     height: 100%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     img{
-        width: 90px;
-        height: 90px;
+        width: 50px;
+        height: 50px;
         display: inline-block;
-        margin-top: 15px;
         border-radius: 50%;
     }
     p{
-        margin-top: 25px;
         text-align: center;
-        font-size: 18px;
-
+        font-size: 14px;
+        margin-left: 5px;
     }
 
    
@@ -42,16 +42,16 @@ export default function MainItemSwiper() {
   return (
     <>
         <Swiper
-            // modules={[Autoplay]}
+            modules={[Autoplay]}
             spaceBetween={10}
-            slidesPerView={2.5}
-            // autoplay={{delay : 2500, disableOnInteraction : true}}
+            slidesPerView={3}
+            autoplay={{delay : 2500, disableOnInteraction : true}}
             loop={true}  
             allowTouchMove={true} 
             style={{display:'flex', width: '100%', padding : '0 10px'}}
             
         >
-            <SwiperSlide style={{height:'200px'}}>
+            <SwiperSlide>
                 <Link to='/haeundae'>
                     <SlideWrap >
                         <Desc>

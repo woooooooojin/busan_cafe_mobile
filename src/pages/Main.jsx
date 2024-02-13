@@ -11,7 +11,7 @@ const FlexBox = styled.div`
   text-align: center;
   line-height: 70px;
   font-size: 14px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
  
 
  
@@ -160,7 +160,7 @@ const CommunityBtn = styled.button`
   border-radius: 10px;
   letter-spacing: 5px;
   margin-bottom: 30px;
-  margin-top: 30px;
+  margin-top: 10px;
   @media (min-width: 768px) {
         width: 250px;
   }
@@ -182,12 +182,26 @@ const CommunityBtn = styled.button`
 
 `
 const Title = styled.h4`
-  font-size: 20px;
+  margin-top: 10px;
   text-align: center;
-  margin-bottom: 10px;
-  margin-top: 20px;
-  font-weight: normal;
+  letter-spacing: 5px;
+  color: black;
+  position: relative;
+  font-weight: 500;
+  font-size: 20px;
 
+  &::before,
+  &::after {
+    content: '[';
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    height: 100%;
+    color: steelblue;
+    font-size: 25px;
+  }
+
+  &::after { content: ']'; }
 `
 
 
@@ -198,13 +212,12 @@ export default function Main() {
     <div>
       <Header/>
 
-    
-         
-        <Banner>
-            <BannerSwiper/>
-        </Banner>
+        <MainItemSwiper/>
 
-        {/* <MainItemSwiper/> */}
+         
+        {/* <Banner>
+            <BannerSwiper/>
+        </Banner> */}
 
 
         <FlexBox> 
@@ -236,6 +249,8 @@ export default function Main() {
 
         
         </FlexBox> 
+
+
         <CommunityBtn>
           <Link to='/community'>Community</Link>
         </CommunityBtn>
