@@ -154,8 +154,8 @@ const CommunityBtn = styled.button`
   height: 55px;
   line-height: 50px;
   background-color: #fff;
-  /* border: 2px dashed #749BC2; */
-  border: 2px dashed #ccc;
+  border: 2px dashed #749BC2;
+  /* border: 2px dashed #ccc; */
   border-radius: 10px;
   letter-spacing: 5px;
   margin-bottom: 30px;
@@ -171,7 +171,8 @@ const CommunityBtn = styled.button`
   a{
     font-weight: 550;
     font-size: 20px;
-    color: #777;
+    color: #749BC2;
+
 
     @media (min-width: 1440px) {
         font-size: 28px;
