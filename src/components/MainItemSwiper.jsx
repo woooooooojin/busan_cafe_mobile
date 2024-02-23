@@ -1,6 +1,6 @@
 import React from 'react'
 import { Swiper, SwiperSlide} from 'swiper/react';
-import { Autoplay} from 'swiper/modules';
+import  { Autoplay} from 'swiper/modules';
 
 import 'swiper/css';
 import { styled } from 'styled-components';
@@ -8,11 +8,10 @@ import { Link } from 'react-router-dom';
 
 
 const SlideWrap = styled.div`
-    height: 80px;
-    /* border: 1px solid #777; */
+    height: 60px;
     border-radius: 20px;
     margin: 15px 0;
-     box-shadow: 3px 3px 7px black;
+    box-shadow: 3px 3px 7px black;
   
 `
 const Desc = styled.div`
@@ -23,8 +22,8 @@ const Desc = styled.div`
     align-items: center;
 
     img{
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         display: inline-block;
         border-radius: 50%;
     }
@@ -46,9 +45,8 @@ export default function MainItemSwiper() {
             spaceBetween={10}
             slidesPerView={3}
             autoplay={{delay : 2500, disableOnInteraction : true}}
-            loop={true}  
-            allowTouchMove={true} 
-            style={{display:'flex', width: '100%', padding : '0 10px'}}
+            style={{width: '100%', padding : '0 10px'}}
+           
             
         >
             <SwiperSlide>
@@ -112,7 +110,7 @@ export default function MainItemSwiper() {
                     <SlideWrap className='wrap3'>
                         <Desc>
                             <img src={ process.env.PUBLIC_URL + '/img/chat_icon.png'} alt="banner_img" />
-                             <p>지역3</p>
+                             <p>커뮤니티</p>
 
                         </Desc>
 

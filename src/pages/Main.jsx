@@ -151,7 +151,6 @@ const Banner = styled.div`
 
 const CommunityBtn = styled.button`
   width: calc(100% - 20px);
-  margin: 0 10px;
   height: 55px;
   line-height: 50px;
   background-color: #fff;
@@ -247,13 +246,13 @@ export default function Main() {
         </div>
 
 
-        
-        </FlexBox> 
-
-
         <CommunityBtn>
           <Link to='/community'>Community</Link>
         </CommunityBtn>
+        </FlexBox> 
+
+
+        
 
 
         <ChannelTalk/>
