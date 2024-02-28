@@ -8,10 +8,10 @@ import MainItemSwiper from '../components/MainItemSwiper'
 
 const FlexBox = styled.div`
   width: 100%;
+  height: calc(100vh - 60px - 50px - 100px);
   text-align: center;
   line-height: 70px;
   font-size: 14px;
-  /* margin-bottom: 20px; */
  
 
  
@@ -154,11 +154,10 @@ const CommunityBtn = styled.button`
   height: 55px;
   line-height: 50px;
   background-color: #fff;
-  border: 2px dashed #749BC2;
-  /* border: 2px dashed #ccc; */
+  border: 2.5px dashed #749BC2;
   border-radius: 10px;
   letter-spacing: 5px;
-  margin-bottom: 30px;
+  /* margin-bottom: 50px; */
   margin-top: 10px;
   @media (min-width: 768px) {
         width: 250px;
