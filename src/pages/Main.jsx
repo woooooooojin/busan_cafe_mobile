@@ -8,11 +8,11 @@ import MainItemSwiper from '../components/MainItemSwiper'
 
 const FlexBox = styled.div`
   width: 100%;
-  height: calc(100vh - 60px - 50px - 90px);
+  height: 100%;
   text-align: center;
   line-height: 70px;
   font-size: 14px;
- 
+  
 
  
 
