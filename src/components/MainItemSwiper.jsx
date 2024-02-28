@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 
 const SlideWrap = styled.div`
-    height: 100px;
+    height: 90px;
     border-radius: 15px;
     margin: 15px 0;
     box-shadow: 3px 3px 7px black;
@@ -28,7 +28,7 @@ const Desc = styled.div`
         border-radius: 50%;
     }
     p{
-        letter-spacing: 2px;
+        letter-spacing: 3px;
         /* margin-left: 5px; */
     }
 
