@@ -9,7 +9,7 @@ const LogoBox = styled.div`
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
  
 
