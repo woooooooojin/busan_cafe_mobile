@@ -157,7 +157,7 @@ const CommunityBtn = styled.button`
   border: 2.5px dashed #749BC2;
   border-radius: 10px;
   letter-spacing: 5px;
-  /* margin-bottom: 50px; */
+  margin-bottom: 20px;
   margin-top: 10px;
   @media (min-width: 768px) {
         width: 250px;
