@@ -8,8 +8,8 @@ import { Link } from 'react-router-dom';
 
 
 const SlideWrap = styled.div`
-    height: 60px;
-    border-radius: 20px;
+    height: 100px;
+    border-radius: 15px;
     margin: 15px 0;
     box-shadow: 3px 3px 7px black;
   
@@ -18,19 +18,18 @@ const Desc = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 
     img{
-        width: 40px;
-        height: 40px;
+        width: 65px;
+        height: 65px;
         display: inline-block;
         border-radius: 50%;
     }
     p{
-        text-align: center;
-        font-size: 14px;
-        margin-left: 5px;
+        letter-spacing: 2px;
+        /* margin-left: 5px; */
     }
 
    
@@ -43,7 +42,7 @@ export default function MainItemSwiper() {
         <Swiper
             modules={[Autoplay]}
             spaceBetween={10}
-            slidesPerView={3}
+            slidesPerView={2}
             autoplay={{delay : 2500, disableOnInteraction : true}}
             style={{width: '100%', padding : '0 10px'}}
            
