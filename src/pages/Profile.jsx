@@ -193,22 +193,32 @@ export default function Profile() {
 
 
     const myPosts = async()=>{
-
+        if (!user || !user?.uid) return;
+        
         const postQuery = query(
             collection(db,'posts'),
             where("userId","==",user?.uid),
             orderBy("createdAt","desc"),
             limit(25)
         )
-        const snapshot = await getDocs(postQuery)
-        const posts = snapshot.docs.map(doc=>{
-            const {post, createdAt, userId, username, photo} = doc.data()
-            return{
-                post, createdAt, userId, username, photo,
-                id:doc.id
-            }
-        })
-        setPost(posts)
+        try {
+            const snapshot = await getDocs(postQuery);
+            const posts = snapshot.docs.map(doc => {
+                const { post, createdAt, userId, username, photo } = doc.data();
+                return {
+                    post,
+                    createdAt,
+                    userId,
+                    username,
+                    photo,
+                    id: doc.id
+                };
+            });
+            setPost(posts);
+        } catch (err) {
+            console.log(err)
+        }
+
     } //userId와 uid가 같은 유저의 포스트를 가져옴
     useEffect(()=>{
         myPosts()
@@ -234,14 +244,14 @@ export default function Profile() {
 
     }
 
-    // useEffect(() => {
-    //     const unsubscribe = onSnapshot(collection(db, 'posts'), (snapshot) => {
-    //         const updatedPosts = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-    //         setPost(updatedPosts)
-    //     })
+    useEffect(() => {
+        const unsubscribe = onSnapshot(collection(db, 'posts'), (snapshot) => {
+            const updatedPosts = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+            setPost(updatedPosts)
+        })
     
-    //     return () => unsubscribe()
-    // }, []) //구독취소
+        return () => unsubscribe()
+    }, []) 
 
   return (
     <>
