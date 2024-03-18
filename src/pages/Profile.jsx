@@ -132,7 +132,7 @@ export default function Profile() {
 
     const navigate = useNavigate()
     const user = auth.currentUser
-    const [profile, setProfile] = useState(user?.photoURL ?? null)
+    const [profile, setProfile] = useState(user?.photoURL ?? "")
 
     const [editName, setEditName] = useState(false) //edit name state
     const [name, setName] = useState(user?.displayName ?? '사용자')
@@ -254,7 +254,11 @@ export default function Profile() {
     }, []) 
 
     useEffect(()=>{
-        console.log(post)
+        const user = auth.currentUser
+        if(auth.currentUser){
+
+            setProfile(user.photoURL??"")
+        }
     },[post])
 
   return (
