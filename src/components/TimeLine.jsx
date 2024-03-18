@@ -273,7 +273,7 @@ export default function TimeLine() {
         <Wrapper>
             {post.map((item) => (
                 <div className='wrap' key={item.id}>
-                    {user.uid === item.userId ? (<DeleteBtn className='del_btn' onClick={() => onDelete(item)}> X</DeleteBtn>) : null}
+                    {user.uid === item.userId ? (<DeleteBtn className='del_btn' onClick={() => onDelete(item)}> X</DeleteBtn>) : ""}
                     
                     <div className="profileImg">
                         <img src={profile} alt="img" />
@@ -291,15 +291,15 @@ export default function TimeLine() {
                         editingPost === item.id ? (
                             <button className='save_btn' onClick={() => saveEditedPost(item)}>저장</button>
                         ) : (<EditPost onClick={() => setEditingPost(item.id)}>수정</EditPost>)
-                        ) : null}
+                        ) : ""}
                     </div>
                     
                     <div className="img_wrap">
                         {item.photo ? <img src={item.photo} alt="img" /> : null}
                         {item.photo && user.uid === item.userId ? (
                         <EditImage htmlFor='files'>수정<input onChange={onPhotoChange} type="file" accept='image/*' id='files'/></EditImage>        
-                        ) : null}
-                        {item.photo && user.uid === item.userId && editingPhoto ? <button className='save_photo' onClick={()=>saveEditPhoto(item)} >저장</button> : null}
+                        ) : ""}
+                        {item.photo && user.uid === item.userId && editingPhoto ? <button className='save_photo' onClick={()=>saveEditPhoto(item)} >저장</button> : ""}
                         
                     </div>
                 </div>

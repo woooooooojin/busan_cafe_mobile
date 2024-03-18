@@ -277,7 +277,7 @@ export default function Profile() {
             
             <Name>
                 {user?.displayName ? user.displayName : '사용자'}
-                {editName ? <NameInput onChange={onChangeName} type='text' value={name}/> : null}
+                {editName ? <NameInput onChange={onChangeName} type='text' value={name}/> : ""}
                 <EditName onClick={onEditNameClick}>{editName ? "이름 저장" : "이름 변경"}</EditName>
             </Name>
 
